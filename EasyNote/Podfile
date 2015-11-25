@@ -1,0 +1,23 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '6.0'
+
+pod "AFNetworking", "~> 2.0"
+pod 'SDWebImage', '~>3.7'
+pod 'MJRefresh'
+pod 'MJExtension'
+pod 'Bugly'
+pod 'UMengAnalytics'##标准SDK，含IDFA
+
+
+target 'EasyNote' do
+
+end
+
+target 'EasyNoteTests' do
+
+end
+
+target 'EasyNoteUITests' do
+
+end
+
