@@ -132,6 +132,7 @@
 				FE309E331C06032400B5FE0D /* ViewController.h */,
 				FE309E341C06032400B5FE0D /* ViewController.m */,
 				FE309E361C06032400B5FE0D /* Main.storyboard */,
+				FE309E681C07601D00B5FE0D /* Class */,
 				FE309E391C06032400B5FE0D /* Assets.xcassets */,
 				FE309E3B1C06032400B5FE0D /* LaunchScreen.storyboard */,
 				FE309E3E1C06032400B5FE0D /* Info.plist */,
@@ -164,6 +165,61 @@
 				FE309E541C06032400B5FE0D /* Info.plist */,
 			);
 			path = EasyNoteUITests;
+			sourceTree = "<group>";
+		};
+		FE309E681C07601D00B5FE0D /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				FE309E691C07601D00B5FE0D /* Main */,
+				FE309E6D1C07601D00B5FE0D /* Other */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		FE309E691C07601D00B5FE0D /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FE309E6A1C07601D00B5FE0D /* Controller */,
+				FE309E6B1C07601D00B5FE0D /* Model */,
+				FE309E6C1C07601D00B5FE0D /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		FE309E6A1C07601D00B5FE0D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FE309E6B1C07601D00B5FE0D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FE309E6C1C07601D00B5FE0D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FE309E6D1C07601D00B5FE0D /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				FE309E6E1C07601D00B5FE0D /* Lib */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		FE309E6E1C07601D00B5FE0D /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
