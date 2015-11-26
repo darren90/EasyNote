@@ -9,8 +9,108 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
-// Include any system framework and library headers here that should be included in all compilation units.
-// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+//http://gank.io/api
+
+#import "UIImageView+WebCache.h"
+//#import "NSString+NET.h"
+//#import "HUDTools.h"
+#import <MJRefresh.h>
+#import <MJExtension.h>
+#import "MJExtension.h"
+//#import "AFNTool.h"
+#import <AFNetworkReachabilityManager.h>//网络状态
+//#import "MLPictureBrowser.h"
+//#import "TFPictureBrowser.h"
+//#import "NSDate+Category.h"
+#import "AppDelegate.h"
+//#import "DatabaseTool.h"
+#import <MobClick.h>
+
+
+// MainScreen Height&Width
+#define ScreenH      [[UIScreen mainScreen] bounds].size.height
+#define ScreenW       [[UIScreen mainScreen] bounds].size.width
+#define KViewW       self.view.frame.size.width
+#define KViewH       self.view.frame.size.height
+
+
+#define PlaceholderImg [UIImage imageNamed:@"nopic_190x210"]  //占位图
+
+// 1.判断是否为iOS7
+#define IsIOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
+//判断是否是iOS8
+#define IsIOS8 ([[UIDevice currentDevice].systemVersion doubleValue] >= 8.0)
+
+// 2.获得RGB颜色
+#define KColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+
+#define KUrl(s) [NSURL URLWithString:s]
+
+#define KSettingUse3G           @"网络提示"     //设置中 是否使用3G的
+#define KAppid                  @"1061374229"
+
+//随机色
+#define KRandomColor     [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0];
+// RGB颜色
+#define KColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+#ifdef DEBUG//调试状态
+#define KLog(...) NSLog(__VA_ARGS__);
+#else//发布状态
+#define TFLog(...)
+#endif
+
+//导航栏标题 字体
+#define KNavTitleFont [UIFont systemFontOfSize:15]
+
+
+
+
+// 通知中心
+#define WBNotificationCenter [NSNotificationCenter defaultCenter]
+
+
+/**********************************网络访问**************************************/
+#define KRowPage                    @"15"//每页多少行
+
+//网络访问前缀 KURLPrefix访问地址
+#define KURLPrefix                          @"http://gank.avosapps.com/api"
+
+
+
+//数据类型： 福利 | Android | iOS | 休息视频 | 拓展资源 | 前端 | all
+#define KInter_day                        @"day"
+#define KInter_Girls                        @"%E7%A6%8F%E5%88%A9"//福利
+#define KInter_iOS                          @"iOS"//iOS
+#define KInter_android                          @"Android"//Android
+#define KInter_video                          @"%E4%BC%91%E6%81%AF%E8%A7%86%E9%A2%91"//休息视频
+#define KInter_extend                          @"%E6%8B%93%E5%B1%95%E8%B5%84%E6%BA%90"//扩展资源
+#define KInter_web                         @"%E5%89%8D%E7%AB%AF"//前端
+#define KInter_all                         @"all"//iOS
+
+#define KInter_Home                         @"video/index"//首页
+#define KInter_Detail                       @"video/details"//详情
+#define KInter_Lasterst                     @"video/lastest"//最近更新
+#define KInter_SearchKeyWord                @"constant/hotSearch"//首页-搜索关键字
+#define KInter_Search                       @"video/search"//首页—搜索 + moviewID
+/**********************************网络访问**************************************/
+
+
+/**********************************第三方服务**************************************/
+
+//AppID：900012079
+//AppKey：ifzTIjm8FXUNSgsg
+//1:腾讯bugly
+#define KBuglyAPPID @"900012995"
+#define KBuglyAPPKey @"RgnuABgTbhBwKWZ2"
+
+//2.友盟
+#define KUmegnAppKey    @"5657299d67e58e72f400135d"
+
+
+/**********************************第三方服务**************************************/
 
 
 #endif /* PrefixHeader_pch */

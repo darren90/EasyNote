@@ -41,12 +41,12 @@
 		F776B13C60E3DAE59427B60D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE309E2A1C06032400B5FE0D /* EasyNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE309E2E1C06032400B5FE0D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FE309E301C06032400B5FE0D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		FE309E311C06032400B5FE0D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FE309E331C06032400B5FE0D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FE309E341C06032400B5FE0D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FE309E301C06032400B5FE0D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = EasyNote/AppDelegate.h; sourceTree = "<group>"; };
+		FE309E311C06032400B5FE0D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = EasyNote/AppDelegate.m; sourceTree = "<group>"; };
+		FE309E331C06032400B5FE0D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = EasyNote/ViewController.h; sourceTree = "<group>"; };
+		FE309E341C06032400B5FE0D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = EasyNote/ViewController.m; sourceTree = "<group>"; };
 		FE309E371C06032400B5FE0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FE309E391C06032400B5FE0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FE309E391C06032400B5FE0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = EasyNote/Assets.xcassets; sourceTree = "<group>"; };
 		FE309E3C1C06032400B5FE0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE309E3E1C06032400B5FE0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE309E431C06032400B5FE0D /* EasyNoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyNoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +105,12 @@
 			isa = PBXGroup;
 			children = (
 				FE309E601C060D7600B5FE0D /* PrefixHeader.pch */,
+				FE309E301C06032400B5FE0D /* AppDelegate.h */,
+				FE309E311C06032400B5FE0D /* AppDelegate.m */,
+				FE309E331C06032400B5FE0D /* ViewController.h */,
+				FE309E341C06032400B5FE0D /* ViewController.m */,
+				FE309E361C06032400B5FE0D /* Main.storyboard */,
+				FE309E391C06032400B5FE0D /* Assets.xcassets */,
 				FE309E2C1C06032400B5FE0D /* EasyNote */,
 				FE309E461C06032400B5FE0D /* EasyNoteTests */,
 				FE309E511C06032400B5FE0D /* EasyNoteUITests */,
@@ -127,15 +133,7 @@
 		FE309E2C1C06032400B5FE0D /* EasyNote */ = {
 			isa = PBXGroup;
 			children = (
-				FE309E301C06032400B5FE0D /* AppDelegate.h */,
-				FE309E311C06032400B5FE0D /* AppDelegate.m */,
-				FE309E331C06032400B5FE0D /* ViewController.h */,
-				FE309E341C06032400B5FE0D /* ViewController.m */,
-				FE309E361C06032400B5FE0D /* Main.storyboard */,
 				FE309E681C07601D00B5FE0D /* Class */,
-				FE309E391C06032400B5FE0D /* Assets.xcassets */,
-				FE309E3B1C06032400B5FE0D /* LaunchScreen.storyboard */,
-				FE309E3E1C06032400B5FE0D /* Info.plist */,
 				FE309E2D1C06032400B5FE0D /* Supporting Files */,
 			);
 			path = EasyNote;
@@ -144,6 +142,8 @@
 		FE309E2D1C06032400B5FE0D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FE309E3E1C06032400B5FE0D /* Info.plist */,
+				FE309E3B1C06032400B5FE0D /* LaunchScreen.storyboard */,
 				FE309E2E1C06032400B5FE0D /* main.m */,
 			);
 			name = "Supporting Files";
@@ -431,6 +431,7 @@
 				FE309E371C06032400B5FE0D /* Base */,
 			);
 			name = Main.storyboard;
+			path = EasyNote;
 			sourceTree = "<group>";
 		};
 		FE309E3B1C06032400B5FE0D /* LaunchScreen.storyboard */ = {
