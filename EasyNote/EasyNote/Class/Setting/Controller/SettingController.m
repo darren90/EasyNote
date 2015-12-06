@@ -36,7 +36,7 @@
     
     // 1.标题
     self.title = @"设置";
-    
+    self.view.backgroundColor =  KColor(239, 239, 239);
 //    self.tableView.backgroundColor = MJColor(229, 230, 231);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.rowHeight = 160 / 3;
@@ -77,7 +77,6 @@
     
     [self.data addObject:group];
 }
-
 
 /**
  *  第10组数据

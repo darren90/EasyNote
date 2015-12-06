@@ -86,23 +86,23 @@
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    NSString *sectionTitle = [self tableView:tableView titleForFooterInSection:section];
+    NSString *sectionTitle = [self tableView:tableView titleForHeaderInSection:section];
     if (sectionTitle == nil) {
         return nil;
     }
     
-    CGSize footerSize = [sectionTitle sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:11]}];;//
+    CGSize footerSize = [sectionTitle sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:12]}];
     
     UILabel *label = [[UILabel alloc] init];
-    label.frame = CGRectMake((self.view.frame.size.width-footerSize.width)/2, 8, footerSize.width, footerSize.height);
+    label.frame = CGRectMake(15, 8, footerSize.width, footerSize.height);
     label.numberOfLines=0;
     label.textColor = [UIColor lightGrayColor];
-    label.font = [UIFont systemFontOfSize:11];
+    label.font = [UIFont systemFontOfSize:12];
     label.text = sectionTitle;
     
     UIView *view = [[UIView alloc] init];
     [view addSubview:label];
-    view.backgroundColor = [UIColor whiteColor];
+    view.backgroundColor = KColor(239, 239, 239);
     
     return view;
 }
@@ -131,7 +131,7 @@
     
     UIView *view = [[UIView alloc] init];
     [view addSubview:label];
-    view.backgroundColor = [UIColor whiteColor];
+    view.backgroundColor =  KColor(239, 239, 239);
     
     return view;
 }
@@ -142,15 +142,15 @@
     return group.footer;
 }
 
-//-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-//{
-//    SettingGroup *group = self.data[section];
-//    return group.header.length > 0 ? 30 : 0.00000001;
-//}
-//-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-//{
-//    SettingGroup *group = self.data[section];
-//    return group.footer.length > 0 ? 30 : 0.00000001;
-//}
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    SettingGroup *group = self.data[section];
+    return group.header.length > 0 ? 30 : 0.00000001;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    SettingGroup *group = self.data[section];
+    return group.footer.length > 0 ? 30 : 0.00000001;
+}
 
 @end
