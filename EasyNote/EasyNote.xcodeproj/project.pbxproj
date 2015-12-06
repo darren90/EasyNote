@@ -39,6 +39,13 @@
 		FEF15CC51C13F2E500642E87 /* PlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15CC41C13F2E500642E87 /* PlaceholderTextView.m */; };
 		FEF15CC91C13F4CC00642E87 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15CC81C13F4CC00642E87 /* BaseNavigationController.m */; };
 		FEF15CCF1C13F93D00642E87 /* SettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15CCE1C13F93D00642E87 /* SettingController.m */; };
+		FEF15CD21C147DB000642E87 /* SettingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15CD11C147DB000642E87 /* SettingItem.m */; };
+		FEF15CD51C147DF400642E87 /* SettingArrowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15CD41C147DF400642E87 /* SettingArrowItem.m */; };
+		FEF15CD81C147E5700642E87 /* SettingLabelItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15CD71C147E5700642E87 /* SettingLabelItem.m */; };
+		FEF15CDB1C147E7800642E87 /* SettingSwitchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15CDA1C147E7800642E87 /* SettingSwitchItem.m */; };
+		FEF15CDE1C147E8F00642E87 /* SettingGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15CDD1C147E8F00642E87 /* SettingGroup.m */; };
+		FEF15CE11C147F0800642E87 /* SettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15CE01C147F0800642E87 /* SettingCell.m */; };
+		FEF15CE41C147FC400642E87 /* BaseSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15CE31C147FC400642E87 /* BaseSettingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +130,20 @@
 		FEF15CC81C13F4CC00642E87 /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		FEF15CCD1C13F93D00642E87 /* SettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingController.h; sourceTree = "<group>"; };
 		FEF15CCE1C13F93D00642E87 /* SettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingController.m; sourceTree = "<group>"; };
+		FEF15CD01C147DB000642E87 /* SettingItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingItem.h; sourceTree = "<group>"; };
+		FEF15CD11C147DB000642E87 /* SettingItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingItem.m; sourceTree = "<group>"; };
+		FEF15CD31C147DF400642E87 /* SettingArrowItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingArrowItem.h; sourceTree = "<group>"; };
+		FEF15CD41C147DF400642E87 /* SettingArrowItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingArrowItem.m; sourceTree = "<group>"; };
+		FEF15CD61C147E5700642E87 /* SettingLabelItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingLabelItem.h; sourceTree = "<group>"; };
+		FEF15CD71C147E5700642E87 /* SettingLabelItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingLabelItem.m; sourceTree = "<group>"; };
+		FEF15CD91C147E7800642E87 /* SettingSwitchItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingSwitchItem.h; sourceTree = "<group>"; };
+		FEF15CDA1C147E7800642E87 /* SettingSwitchItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingSwitchItem.m; sourceTree = "<group>"; };
+		FEF15CDC1C147E8F00642E87 /* SettingGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingGroup.h; sourceTree = "<group>"; };
+		FEF15CDD1C147E8F00642E87 /* SettingGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingGroup.m; sourceTree = "<group>"; };
+		FEF15CDF1C147F0800642E87 /* SettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingCell.h; sourceTree = "<group>"; };
+		FEF15CE01C147F0800642E87 /* SettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingCell.m; sourceTree = "<group>"; };
+		FEF15CE21C147FC400642E87 /* BaseSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseSettingViewController.h; sourceTree = "<group>"; };
+		FEF15CE31C147FC400642E87 /* BaseSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseSettingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -443,6 +464,8 @@
 			children = (
 				FEF15CCD1C13F93D00642E87 /* SettingController.h */,
 				FEF15CCE1C13F93D00642E87 /* SettingController.m */,
+				FEF15CE21C147FC400642E87 /* BaseSettingViewController.h */,
+				FEF15CE31C147FC400642E87 /* BaseSettingViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -450,6 +473,16 @@
 		FEF15CB31C13EE0B00642E87 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FEF15CD01C147DB000642E87 /* SettingItem.h */,
+				FEF15CD11C147DB000642E87 /* SettingItem.m */,
+				FEF15CD31C147DF400642E87 /* SettingArrowItem.h */,
+				FEF15CD41C147DF400642E87 /* SettingArrowItem.m */,
+				FEF15CD61C147E5700642E87 /* SettingLabelItem.h */,
+				FEF15CD71C147E5700642E87 /* SettingLabelItem.m */,
+				FEF15CD91C147E7800642E87 /* SettingSwitchItem.h */,
+				FEF15CDA1C147E7800642E87 /* SettingSwitchItem.m */,
+				FEF15CDC1C147E8F00642E87 /* SettingGroup.h */,
+				FEF15CDD1C147E8F00642E87 /* SettingGroup.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -457,6 +490,8 @@
 		FEF15CB41C13EE0B00642E87 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FEF15CDF1C147F0800642E87 /* SettingCell.h */,
+				FEF15CE01C147F0800642E87 /* SettingCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -637,26 +672,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEF15CDB1C147E7800642E87 /* SettingSwitchItem.m in Sources */,
 				FE309E351C06032400B5FE0D /* ViewController.m in Sources */,
 				FEF15CBA1C13EE2D00642E87 /* NoteModel.m in Sources */,
 				FE309E321C06032400B5FE0D /* AppDelegate.m in Sources */,
 				FEF15C9D1C13ED7A00642E87 /* RIButtonItem.m in Sources */,
+				FEF15CD81C147E5700642E87 /* SettingLabelItem.m in Sources */,
 				FEF15C9C1C13ED7A00642E87 /* HUDTools.m in Sources */,
+				FEF15CD21C147DB000642E87 /* SettingItem.m in Sources */,
 				FEF15C971C13ED7A00642E87 /* FMDatabase.m in Sources */,
 				FEF15CB51C13EE0B00642E87 /* NoteListController.m in Sources */,
 				FEF15CB61C13EE0B00642E87 /* NoteListCell.m in Sources */,
 				FEF15CC51C13F2E500642E87 /* PlaceholderTextView.m in Sources */,
+				FEF15CE41C147FC400642E87 /* BaseSettingViewController.m in Sources */,
 				FEF15C9B1C13ED7A00642E87 /* FMResultSet.m in Sources */,
+				FEF15CD51C147DF400642E87 /* SettingArrowItem.m in Sources */,
 				FEF15CA31C13ED7A00642E87 /* FMDBTool.m in Sources */,
 				FEF15CA21C13ED7A00642E87 /* UIImage+Category.m in Sources */,
 				FEF15CC91C13F4CC00642E87 /* BaseNavigationController.m in Sources */,
 				FE309E2F1C06032400B5FE0D /* main.m in Sources */,
 				FEF15C991C13ED7A00642E87 /* FMDatabasePool.m in Sources */,
 				FEF15C9F1C13ED7A00642E87 /* SVProgressHUD.m in Sources */,
+				FEF15CE11C147F0800642E87 /* SettingCell.m in Sources */,
 				FEF15CC21C13F22200642E87 /* NoteDetailController.m in Sources */,
 				FEF15C981C13ED7A00642E87 /* FMDatabaseAdditions.m in Sources */,
 				FEF15CBF1C13F14900642E87 /* NewNoteController.m in Sources */,
 				FEF15CA01C13ED7A00642E87 /* UIAlertView+Blocks.m in Sources */,
+				FEF15CDE1C147E8F00642E87 /* SettingGroup.m in Sources */,
 				FEF15CCF1C13F93D00642E87 /* SettingController.m in Sources */,
 				FEF15CA11C13ED7A00642E87 /* NSString+Category.m in Sources */,
 				FEF15C9A1C13ED7A00642E87 /* FMDatabaseQueue.m in Sources */,

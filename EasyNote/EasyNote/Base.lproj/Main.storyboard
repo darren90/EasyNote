@@ -39,8 +39,8 @@
                     <navigationItem key="navigationItem" title="简易笔记" id="XhX-Ot-mEw"/>
                     <connections>
                         <segue destination="eLi-dz-87e" kind="push" identifier="newNote" id="B5O-hb-c1c"/>
-                        <segue destination="hud-0v-crT" kind="push" identifier="seeting" id="Axa-ML-Tbu"/>
                         <segue destination="jzY-7M-MEb" kind="push" identifier="noteDetail" id="E5J-22-4m2"/>
+                        <segue destination="O3y-Mf-yGh" kind="push" identifier="setting" id="bgo-w9-nDA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nrm-9J-kOV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -48,24 +48,36 @@
             <point key="canvasLocation" x="241" y="83"/>
         </scene>
         <!--设置-->
-        <scene sceneID="UnW-e7-6cG">
+        <scene sceneID="HSL-0y-hnQ">
             <objects>
-                <viewController storyboardIdentifier="setingVc" id="hud-0v-crT" customClass="SettingController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Xxk-fv-eab"/>
-                        <viewControllerLayoutGuide type="bottom" id="yqt-iy-frD"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hY0-sn-RqF">
+                <tableViewController storyboardIdentifier="setingVc" id="O3y-Mf-yGh" customClass="SettingController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Dsu-Ev-INJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="设置" id="B2Y-g8-cGE"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zrZ-3e-2mu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="O8Z-hx-4tj">
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O8Z-hx-4tj" id="ove-BX-AV6">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="O3y-Mf-yGh" id="beT-T9-sBw"/>
+                            <outlet property="delegate" destination="O3y-Mf-yGh" id="LcF-QS-zgH"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="设置" id="VDA-Bf-fVy"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OZ2-H8-Kv6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="691" y="550"/>
+            <point key="canvasLocation" x="689" y="440"/>
         </scene>
         <!--便签-->
         <scene sceneID="qAw-Yh-btI">
