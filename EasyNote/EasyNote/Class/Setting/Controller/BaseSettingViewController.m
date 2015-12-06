@@ -55,7 +55,7 @@
     // 2.给cell传递模型数据
     SettingGroup *group = self.data[indexPath.section];
     cell.item = group.items[indexPath.row];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
     // 3.返回cell
     return cell;
