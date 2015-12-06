@@ -37,6 +37,7 @@
 		FEF15CBF1C13F14900642E87 /* NewNoteController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15CBE1C13F14900642E87 /* NewNoteController.m */; };
 		FEF15CC21C13F22200642E87 /* NoteDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15CC11C13F22200642E87 /* NoteDetailController.m */; };
 		FEF15CC51C13F2E500642E87 /* PlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15CC41C13F2E500642E87 /* PlaceholderTextView.m */; };
+		FEF15CC91C13F4CC00642E87 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15CC81C13F4CC00642E87 /* BaseNavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,8 @@
 		FEF15CC11C13F22200642E87 /* NoteDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteDetailController.m; sourceTree = "<group>"; };
 		FEF15CC31C13F2E500642E87 /* PlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceholderTextView.h; sourceTree = "<group>"; };
 		FEF15CC41C13F2E500642E87 /* PlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceholderTextView.m; sourceTree = "<group>"; };
+		FEF15CC71C13F4CC00642E87 /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		FEF15CC81C13F4CC00642E87 /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +248,7 @@
 		FE309E691C07601D00B5FE0D /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FEF15CC61C13F4B700642E87 /* Base */,
 				FE309E6A1C07601D00B5FE0D /* Controller */,
 				FE309E6B1C07601D00B5FE0D /* Model */,
 				FE309E6C1C07601D00B5FE0D /* View */,
@@ -452,6 +456,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		FEF15CC61C13F4B700642E87 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				FEF15CC71C13F4CC00642E87 /* BaseNavigationController.h */,
+				FEF15CC81C13F4CC00642E87 /* BaseNavigationController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -631,6 +644,7 @@
 				FEF15C9B1C13ED7A00642E87 /* FMResultSet.m in Sources */,
 				FEF15CA31C13ED7A00642E87 /* FMDBTool.m in Sources */,
 				FEF15CA21C13ED7A00642E87 /* UIImage+Category.m in Sources */,
+				FEF15CC91C13F4CC00642E87 /* BaseNavigationController.m in Sources */,
 				FE309E2F1C06032400B5FE0D /* main.m in Sources */,
 				FEF15C991C13ED7A00642E87 /* FMDatabasePool.m in Sources */,
 				FEF15C9F1C13ED7A00642E87 /* SVProgressHUD.m in Sources */,
