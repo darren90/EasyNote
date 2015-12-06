@@ -26,6 +26,7 @@
 #import "AppDelegate.h"
 //#import "DatabaseTool.h"
 #import <MobClick.h>
+#import <MJRefresh.h>
 
 
 // MainScreen Height&Width
@@ -96,7 +97,7 @@
 #define KInter_SearchKeyWord                @"constant/hotSearch"//首页-搜索关键字
 #define KInter_Search                       @"video/search"//首页—搜索 + moviewID
 /**********************************网络访问**************************************/
-
+#define KWidth    [UIScreen mainScreen].bounds.size.width
 
 /**********************************第三方服务**************************************/
 

@@ -16,6 +16,9 @@
 		FE309E3D1C06032400B5FE0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE309E3B1C06032400B5FE0D /* LaunchScreen.storyboard */; };
 		FE309E481C06032400B5FE0D /* EasyNoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE309E471C06032400B5FE0D /* EasyNoteTests.m */; };
 		FE309E531C06032400B5FE0D /* EasyNoteUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE309E521C06032400B5FE0D /* EasyNoteUITests.m */; };
+		FEF15C5E1C13E10100642E87 /* NoteListController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15C5D1C13E10100642E87 /* NoteListController.m */; };
+		FEF15C621C13E14100642E87 /* NoteListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15C601C13E14100642E87 /* NoteListCell.m */; };
+		FEF15C631C13E14100642E87 /* NoteListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEF15C611C13E14100642E87 /* NoteListCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,11 @@
 		FE309E521C06032400B5FE0D /* EasyNoteUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EasyNoteUITests.m; sourceTree = "<group>"; };
 		FE309E541C06032400B5FE0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE309E601C060D7600B5FE0D /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		FEF15C5C1C13E10100642E87 /* NoteListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteListController.h; sourceTree = "<group>"; };
+		FEF15C5D1C13E10100642E87 /* NoteListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteListController.m; sourceTree = "<group>"; };
+		FEF15C5F1C13E14100642E87 /* NoteListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteListCell.h; sourceTree = "<group>"; };
+		FEF15C601C13E14100642E87 /* NoteListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteListCell.m; sourceTree = "<group>"; };
+		FEF15C611C13E14100642E87 /* NoteListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteListCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +142,9 @@
 			isa = PBXGroup;
 			children = (
 				FE309E681C07601D00B5FE0D /* Class */,
+				FEF15C501C13E0B500642E87 /* NewNote */,
+				FEF15C541C13E0B500642E87 /* NoteList */,
+				FEF15C581C13E0B500642E87 /* Setting */,
 				FE309E2D1C06032400B5FE0D /* Supporting Files */,
 			);
 			path = EasyNote;
@@ -220,6 +231,107 @@
 			children = (
 			);
 			path = Lib;
+			sourceTree = "<group>";
+		};
+		FEF15C501C13E0B500642E87 /* NewNote */ = {
+			isa = PBXGroup;
+			children = (
+				FEF15C511C13E0B500642E87 /* Controller */,
+				FEF15C521C13E0B500642E87 /* Model */,
+				FEF15C531C13E0B500642E87 /* View */,
+			);
+			name = NewNote;
+			path = Class/Other/NewNote;
+			sourceTree = "<group>";
+		};
+		FEF15C511C13E0B500642E87 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FEF15C521C13E0B500642E87 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FEF15C531C13E0B500642E87 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FEF15C541C13E0B500642E87 /* NoteList */ = {
+			isa = PBXGroup;
+			children = (
+				FEF15C551C13E0B500642E87 /* Controller */,
+				FEF15C561C13E0B500642E87 /* Model */,
+				FEF15C571C13E0B500642E87 /* View */,
+			);
+			name = NoteList;
+			path = Class/Other/NoteList;
+			sourceTree = "<group>";
+		};
+		FEF15C551C13E0B500642E87 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FEF15C5C1C13E10100642E87 /* NoteListController.h */,
+				FEF15C5D1C13E10100642E87 /* NoteListController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FEF15C561C13E0B500642E87 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FEF15C571C13E0B500642E87 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FEF15C5F1C13E14100642E87 /* NoteListCell.h */,
+				FEF15C601C13E14100642E87 /* NoteListCell.m */,
+				FEF15C611C13E14100642E87 /* NoteListCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FEF15C581C13E0B500642E87 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				FEF15C591C13E0B500642E87 /* Controller */,
+				FEF15C5A1C13E0B500642E87 /* Model */,
+				FEF15C5B1C13E0B500642E87 /* View */,
+			);
+			name = Setting;
+			path = Class/Other/Setting;
+			sourceTree = "<group>";
+		};
+		FEF15C591C13E0B500642E87 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FEF15C5A1C13E0B500642E87 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FEF15C5B1C13E0B500642E87 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,6 +442,7 @@
 				FE309E3D1C06032400B5FE0D /* LaunchScreen.storyboard in Resources */,
 				FE309E3A1C06032400B5FE0D /* Assets.xcassets in Resources */,
 				FE309E381C06032400B5FE0D /* Main.storyboard in Resources */,
+				FEF15C631C13E14100642E87 /* NoteListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,8 +501,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE309E351C06032400B5FE0D /* ViewController.m in Sources */,
+				FEF15C5E1C13E10100642E87 /* NoteListController.m in Sources */,
 				FE309E321C06032400B5FE0D /* AppDelegate.m in Sources */,
 				FE309E2F1C06032400B5FE0D /* main.m in Sources */,
+				FEF15C621C13E14100642E87 /* NoteListCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
