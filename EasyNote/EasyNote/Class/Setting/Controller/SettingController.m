@@ -67,7 +67,7 @@
 - (void)setupGroup_0
 {
     //begain
-    SettingItem *login = [SettingItem itemWithTitle:@"长按删除笔记"];
+    SettingItem *login = [SettingItem itemWithTitle:@"操作:长按删除笔记"];
  
     
     SettingGroup *group = [[SettingGroup alloc] init];
