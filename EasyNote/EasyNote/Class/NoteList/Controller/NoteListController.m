@@ -9,6 +9,8 @@
 
 #import "NoteListController.h"
 #import "NoteListCell.h"
+#import "NewNoteController.h"
+#import "NoteModel.h"
 
 @interface NoteListController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
@@ -40,6 +42,17 @@ static NSString *const IDENTTFIER = @"notelist";
     UIGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(scrollToTop)];
     [self.navigationController.navigationBar addGestureRecognizer:tap];
     
+    [self initWaterView];
+    [self initNavBar];
+}
+-(void)initNavBar
+{
+    self.view.backgroundColor = KColor(245, 245, 245);
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewNote)];
+}
+
+-(void)initWaterView
+{
     CGRect rect = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);//减去顶部NavBar64，底部TabBar49
     UICollectionViewFlowLayout * flowLayout = [[UICollectionViewFlowLayout alloc] init];
     UICollectionView * waterView = [[UICollectionView alloc]initWithFrame:rect collectionViewLayout:flowLayout];
@@ -51,7 +64,7 @@ static NSString *const IDENTTFIER = @"notelist";
     waterView.dataSource = self;
     self.waterView = waterView;
     
-     CGFloat section = 10;
+    CGFloat section = 10;
     int imgW = (KWidth - 3*section) / 2;
     int imgH = imgW;
     
@@ -60,6 +73,16 @@ static NSString *const IDENTTFIER = @"notelist";
     flowLayout.minimumInteritemSpacing = 7;
     //flowLayout.headerReferenceSize = CGSizeMake(10, 10);
     flowLayout.sectionInset = UIEdgeInsetsMake(section,section,0,section);
+}
+
+
+-(void)addNewNote
+{
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    NewNoteController *newVc = [sb instantiateViewControllerWithIdentifier:@"newNoteVc"];
+//    NoteModel *model = self.dataArray[inde ];
+//    newVc.noteId = self.
+    [self.navigationController pushViewController:newVc animated:YES];
 }
 
 #pragma - mark 滚到顶部

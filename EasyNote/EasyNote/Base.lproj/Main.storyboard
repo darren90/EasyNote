@@ -38,7 +38,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="简易笔记" id="XhX-Ot-mEw"/>
                     <connections>
-                        <segue destination="eLi-dz-87e" kind="push" id="B5O-hb-c1c"/>
+                        <segue destination="eLi-dz-87e" kind="push" identifier="newNote" id="B5O-hb-c1c"/>
                         <segue destination="hud-0v-crT" kind="push" id="Axa-ML-Tbu"/>
                     </connections>
                 </viewController>
@@ -66,10 +66,10 @@
             </objects>
             <point key="canvasLocation" x="721" y="354"/>
         </scene>
-        <!--View Controller-->
+        <!--新笔记-->
         <scene sceneID="cmY-Ph-fT7">
             <objects>
-                <viewController id="eLi-dz-87e" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newNoteVc" id="eLi-dz-87e" customClass="NewNoteController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SSV-O7-slq"/>
                         <viewControllerLayoutGuide type="bottom" id="Zt1-ay-GN4"/>
@@ -80,7 +80,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="K2b-Rs-9zd"/>
+                    <navigationItem key="navigationItem" title="新笔记" id="K2b-Rs-9zd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NaR-C3-Ls1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

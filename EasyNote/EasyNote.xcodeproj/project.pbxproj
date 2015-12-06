@@ -34,6 +34,9 @@
 		FEF15CB71C13EE0B00642E87 /* NoteListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEF15CB01C13EE0B00642E87 /* NoteListCell.xib */; };
 		FEF15CBA1C13EE2D00642E87 /* NoteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15CB91C13EE2D00642E87 /* NoteModel.m */; };
 		FEF15CBC1C13EF0B00642E87 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FEF15CBB1C13EF0B00642E87 /* libsqlite3.tbd */; };
+		FEF15CBF1C13F14900642E87 /* NewNoteController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15CBE1C13F14900642E87 /* NewNoteController.m */; };
+		FEF15CC21C13F22200642E87 /* NoteDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15CC11C13F22200642E87 /* NoteDetailController.m */; };
+		FEF15CC51C13F2E500642E87 /* PlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15CC41C13F2E500642E87 /* PlaceholderTextView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +111,12 @@
 		FEF15CB81C13EE2D00642E87 /* NoteModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteModel.h; sourceTree = "<group>"; };
 		FEF15CB91C13EE2D00642E87 /* NoteModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteModel.m; sourceTree = "<group>"; };
 		FEF15CBB1C13EF0B00642E87 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		FEF15CBD1C13F14900642E87 /* NewNoteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewNoteController.h; sourceTree = "<group>"; };
+		FEF15CBE1C13F14900642E87 /* NewNoteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewNoteController.m; sourceTree = "<group>"; };
+		FEF15CC01C13F22200642E87 /* NoteDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteDetailController.h; sourceTree = "<group>"; };
+		FEF15CC11C13F22200642E87 /* NoteDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteDetailController.m; sourceTree = "<group>"; };
+		FEF15CC31C13F2E500642E87 /* PlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceholderTextView.h; sourceTree = "<group>"; };
+		FEF15CC41C13F2E500642E87 /* PlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceholderTextView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -350,6 +359,8 @@
 		FEF15CA51C13EE0B00642E87 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FEF15CBD1C13F14900642E87 /* NewNoteController.h */,
+				FEF15CBE1C13F14900642E87 /* NewNoteController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -366,6 +377,8 @@
 		FEF15CA71C13EE0B00642E87 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FEF15CC31C13F2E500642E87 /* PlaceholderTextView.h */,
+				FEF15CC41C13F2E500642E87 /* PlaceholderTextView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -385,6 +398,8 @@
 			children = (
 				FEF15CAA1C13EE0B00642E87 /* NoteListController.h */,
 				FEF15CAB1C13EE0B00642E87 /* NoteListController.m */,
+				FEF15CC01C13F22200642E87 /* NoteDetailController.h */,
+				FEF15CC11C13F22200642E87 /* NoteDetailController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -612,13 +627,16 @@
 				FEF15C971C13ED7A00642E87 /* FMDatabase.m in Sources */,
 				FEF15CB51C13EE0B00642E87 /* NoteListController.m in Sources */,
 				FEF15CB61C13EE0B00642E87 /* NoteListCell.m in Sources */,
+				FEF15CC51C13F2E500642E87 /* PlaceholderTextView.m in Sources */,
 				FEF15C9B1C13ED7A00642E87 /* FMResultSet.m in Sources */,
 				FEF15CA31C13ED7A00642E87 /* FMDBTool.m in Sources */,
 				FEF15CA21C13ED7A00642E87 /* UIImage+Category.m in Sources */,
 				FE309E2F1C06032400B5FE0D /* main.m in Sources */,
 				FEF15C991C13ED7A00642E87 /* FMDatabasePool.m in Sources */,
 				FEF15C9F1C13ED7A00642E87 /* SVProgressHUD.m in Sources */,
+				FEF15CC21C13F22200642E87 /* NoteDetailController.m in Sources */,
 				FEF15C981C13ED7A00642E87 /* FMDatabaseAdditions.m in Sources */,
+				FEF15CBF1C13F14900642E87 /* NewNoteController.m in Sources */,
 				FEF15CA01C13ED7A00642E87 /* UIAlertView+Blocks.m in Sources */,
 				FEF15CA11C13ED7A00642E87 /* NSString+Category.m in Sources */,
 				FEF15C9A1C13ED7A00642E87 /* FMDatabaseQueue.m in Sources */,
