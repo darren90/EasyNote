@@ -38,6 +38,7 @@
 		FEF15CC21C13F22200642E87 /* NoteDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15CC11C13F22200642E87 /* NoteDetailController.m */; };
 		FEF15CC51C13F2E500642E87 /* PlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15CC41C13F2E500642E87 /* PlaceholderTextView.m */; };
 		FEF15CC91C13F4CC00642E87 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15CC81C13F4CC00642E87 /* BaseNavigationController.m */; };
+		FEF15CCF1C13F93D00642E87 /* SettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15CCE1C13F93D00642E87 /* SettingController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,8 @@
 		FEF15CC41C13F2E500642E87 /* PlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceholderTextView.m; sourceTree = "<group>"; };
 		FEF15CC71C13F4CC00642E87 /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
 		FEF15CC81C13F4CC00642E87 /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		FEF15CCD1C13F93D00642E87 /* SettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingController.h; sourceTree = "<group>"; };
+		FEF15CCE1C13F93D00642E87 /* SettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -438,6 +441,8 @@
 		FEF15CB21C13EE0B00642E87 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FEF15CCD1C13F93D00642E87 /* SettingController.h */,
+				FEF15CCE1C13F93D00642E87 /* SettingController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -652,6 +657,7 @@
 				FEF15C981C13ED7A00642E87 /* FMDatabaseAdditions.m in Sources */,
 				FEF15CBF1C13F14900642E87 /* NewNoteController.m in Sources */,
 				FEF15CA01C13ED7A00642E87 /* UIAlertView+Blocks.m in Sources */,
+				FEF15CCF1C13F93D00642E87 /* SettingController.m in Sources */,
 				FEF15CA11C13ED7A00642E87 /* NSString+Category.m in Sources */,
 				FEF15C9A1C13ED7A00642E87 /* FMDatabaseQueue.m in Sources */,
 			);

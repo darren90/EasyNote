@@ -39,17 +39,17 @@
                     <navigationItem key="navigationItem" title="简易笔记" id="XhX-Ot-mEw"/>
                     <connections>
                         <segue destination="eLi-dz-87e" kind="push" identifier="newNote" id="B5O-hb-c1c"/>
-                        <segue destination="hud-0v-crT" kind="push" id="Axa-ML-Tbu"/>
+                        <segue destination="hud-0v-crT" kind="push" identifier="seeting" id="Axa-ML-Tbu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nrm-9J-kOV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="241" y="83"/>
         </scene>
-        <!--View Controller-->
+        <!--设置-->
         <scene sceneID="UnW-e7-6cG">
             <objects>
-                <viewController id="hud-0v-crT" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="setingVc" id="hud-0v-crT" customClass="SettingController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xxk-fv-eab"/>
                         <viewControllerLayoutGuide type="bottom" id="yqt-iy-frD"/>
@@ -60,11 +60,11 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="B2Y-g8-cGE"/>
+                    <navigationItem key="navigationItem" title="设置" id="B2Y-g8-cGE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zrZ-3e-2mu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="721" y="354"/>
+            <point key="canvasLocation" x="721" y="361"/>
         </scene>
         <!--新笔记-->
         <scene sceneID="cmY-Ph-fT7">

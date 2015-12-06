@@ -11,6 +11,8 @@
 #import "NoteListCell.h"
 #import "NewNoteController.h"
 #import "NoteModel.h"
+#import "SettingController.h"
+#import "BaseNavigationController.h"
 
 @interface NoteListController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
@@ -49,6 +51,8 @@ static NSString *const IDENTTFIER = @"notelist";
 {
     self.view.backgroundColor = KColor(245, 245, 245);
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewNote)];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"setting"] style:UIBarButtonItemStyleDone target:self action:@selector(jumpToSeeting)];
 }
 
 -(void)initWaterView
@@ -75,6 +79,14 @@ static NSString *const IDENTTFIER = @"notelist";
     flowLayout.sectionInset = UIEdgeInsetsMake(section,section,0,section);
 }
 
+-(void)jumpToSeeting
+{
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    SettingController *newVc = [sb instantiateViewControllerWithIdentifier:@"setingVc"];
+//    SettingController *newVc = [[SettingController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:newVc];
+    [self presentViewController:nav animated:YES completion:nil];
+}
 
 -(void)addNewNote
 {
