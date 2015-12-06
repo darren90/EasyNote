@@ -67,6 +67,7 @@ static NSString *const IDENTTFIER = @"notelist";
     waterView.delegate = self;
     waterView.dataSource = self;
     self.waterView = waterView;
+    waterView.backgroundColor = KColor(245, 245, 245);
     
     CGFloat section = 10;
     int imgW = (KWidth - 3*section) / 2;
@@ -117,7 +118,7 @@ static NSString *const IDENTTFIER = @"notelist";
 {
     NoteListCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:IDENTTFIER forIndexPath:indexPath];
 //    cell.model = self.dataArray[indexPath.item];
-    cell.backgroundColor = [UIColor grayColor];
+//    cell.backgroundColor = [UIColor grayColor];
     return cell;
 }
 

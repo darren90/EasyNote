@@ -8,14 +8,42 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="notelist" id="gTV-IL-0wX" customClass="NoteListCell">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015年12月06日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1b-R7-N6V">
+                        <rect key="frame" x="8" y="8" width="104" height="20"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="6oY-tb-Yfq"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这个便签还是非常赞的，好用大家都知道" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4UF-fj-xSS">
+                        <rect key="frame" x="8" y="34" width="104" height="76"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
                 <animations/>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <animations/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="4UF-fj-xSS" secondAttribute="bottom" constant="10" id="10Z-e0-AwQ"/>
+                <constraint firstItem="4UF-fj-xSS" firstAttribute="top" secondItem="i1b-R7-N6V" secondAttribute="bottom" constant="6" id="74O-PW-FDn"/>
+                <constraint firstAttribute="trailing" secondItem="4UF-fj-xSS" secondAttribute="trailing" constant="8" id="EKZ-V8-Kln"/>
+                <constraint firstItem="i1b-R7-N6V" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="Jnh-bO-DfY"/>
+                <constraint firstItem="i1b-R7-N6V" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="ZAU-Tb-JRZ"/>
+                <constraint firstAttribute="trailing" secondItem="i1b-R7-N6V" secondAttribute="trailing" constant="8" id="aY4-kf-ojC"/>
+                <constraint firstItem="4UF-fj-xSS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="fBs-ak-F1l"/>
+            </constraints>
         </collectionViewCell>
     </objects>
 </document>

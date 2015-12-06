@@ -19,6 +19,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationItem.leftBarButtonItem= [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"nav_back_me_h"] style:UIBarButtonItemStyleDone target:self action:@selector(back)];
+    
+    
     // Do any additional setup after loading the view.
     PlaceholderTextView *textView = [[PlaceholderTextView alloc]init];
     self.textView = textView;
@@ -27,7 +31,11 @@
     [self.view addSubview:textView];
     textView.font = [UIFont systemFontOfSize:18];
 }
-
+-(void)back
+{
+    //    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];;
+}
 
 
 @end
