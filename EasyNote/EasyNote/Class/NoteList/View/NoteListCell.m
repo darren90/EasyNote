@@ -20,9 +20,23 @@
 - (void)awakeFromNib {
     // Initialization code
     self.backgroundColor = [UIColor whiteColor];
-    self.titleLabel.backgroundColor = [UIColor lightGrayColor];
+//    self.titleLabel.backgroundColor = [UIColor lightGrayColor];
+    
+    self.userInteractionEnabled = YES;
+    
+    UIGestureRecognizer *longTap = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(didDelSelf:)];
+    [self addGestureRecognizer:longTap];
 }
 
+-(void)didDelSelf:(UIGestureRecognizer *)gesture
+{
+//    NSLog(@"-state-:%ld",(long)gesture.state);
+    if (gesture.state == UIGestureRecognizerStateRecognized) {
+        if ([self.delegate respondsToSelector:@selector(noteListCellDidDeleteThisItem:)]) {
+            [self.delegate noteListCellDidDeleteThisItem:self.model];
+        }
+    }
+}
 
 -(void)setModel:(NoteModel *)model
 {

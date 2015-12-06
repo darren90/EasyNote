@@ -36,7 +36,6 @@
     
     self.navigationItem.leftBarButtonItem= [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"nav_back_me_h"] style:UIBarButtonItemStyleDone target:self action:@selector(back)];
     
-    
     // Do any additional setup after loading the view.
     PlaceholderTextView *textView = [[PlaceholderTextView alloc]init];
     self.textView = textView;
@@ -51,14 +50,16 @@
 -(void)back
 {
     NSString *content = self.textView.text;
-    //去掉首部空格，作为标题
-    NSString *title = [content stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-    if (title.length > 30) {
-        title = [title substringToIndex:30];
+    if ([content stringByReplacingOccurrencesOfString:@" " withString:@""].length > 0) {
+        //去掉首部空格，作为标题
+        NSString *title = [content stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        if (title.length > 30) {
+            title = [title substringToIndex:30];
+        }
+        NoteModel *model = [NoteModel noteWithIdStr:[NSString idStr] title:title content:content];
+        [FMDBTool addNoteWithNoteModel:model idStr:[NSString idStr]];
+        NSLog(@"content:%@",content);
     }
-    NoteModel *model = [NoteModel noteWithIdStr:[NSString idStr] title:title content:content];
-    [FMDBTool addNoteWithNoteModel:model idStr:[NSString idStr]];
-    NSLog(@"content:%@",content);
     
     [self.navigationController popViewControllerAnimated:YES];;
 }

@@ -13,12 +13,21 @@
 #import "NoteModel.h"
 #import "SettingController.h"
 #import "BaseNavigationController.h"
+#import "NoteDetailController.h"
 
-@interface NoteListController ()<UICollectionViewDelegate,UICollectionViewDataSource>
+@interface NoteListController ()<UICollectionViewDelegate,UICollectionViewDataSource,NoteListCellDelegate,UIAlertViewDelegate>
 
 @property (nonatomic,strong)NSMutableArray * dataArray;
 
 @property (nonatomic,weak)UICollectionView *waterView;
+
+/**
+ *  删除的index
+ */
+//@property (nonatomic,assign)NSUInteger delIndex;
+
+@property (nonatomic,strong)NoteModel * delModel;
+
 @end
 
 @implementation NoteListController
@@ -122,19 +131,50 @@ static NSString *const IDENTTFIER = @"notelist";
 {
     NoteListCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:IDENTTFIER forIndexPath:indexPath];
     cell.model = self.dataArray[indexPath.item];
-//    cell.backgroundColor = [UIColor grayColor];
+    cell.delegate = self;
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-//    MovieHome *model = self.dataArray[indexPath.item];
-//    MovieDetailViewController *detailVc = [[MovieDetailViewController alloc]init];
-//    detailVc.seasonId = model.ID;
-//    detailVc.topTitle = model.title;
-//    self.navigationController.hidesBottomBarWhenPushed = YES;
-//    [self.navigationController pushViewController:detailVc animated:YES];
+{    
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    NoteDetailController *detailVc = [sb instantiateViewControllerWithIdentifier:@"noteDetailVc"];
+    NoteModel *model = self.dataArray[indexPath.row];
+    detailVc.model = model;
+    [self.navigationController pushViewController:detailVc animated:YES];
 }
+
+#pragma mark 
+-(void)noteListCellDidDeleteThisItem:(NoteModel *)model
+{
+    self.delModel = model;
+//    NSUInteger index = [self.dataArray indexOfObject:model];
+//    NSLog(@"---lllll----pp:%lu",(unsigned long)index);
+    
+    UIAlertView *alert  = [[UIAlertView alloc]initWithTitle:@"删除便签" message:@"" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+     [alert show];
+    //1：删除数据库
+//    [FMDBTool delBookWithBookName:bookName];
+
+    //2：更新数据源，刷新表格
+//    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:0];
+//    [self.dataArray removeObjectAtIndex:indexPath.row];
+//    [self.waterView deleteItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
+}
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        NSUInteger index = [self.dataArray indexOfObject:self.delModel];
+        //1：删除数据库
+        [FMDBTool delNoteWithIdStr:self.delModel.idStr];
+        
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:0];
+        [self.dataArray removeObjectAtIndex:indexPath.row];
+        [self.waterView deleteItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
+    }
+}
+
+
 
 - (NSMutableArray *)dataArray
 {

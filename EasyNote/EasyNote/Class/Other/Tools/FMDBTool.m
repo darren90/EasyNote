@@ -64,7 +64,7 @@ static FMDatabaseQueue *_queue;
     __block BOOL result;
     [_queue inDatabase:^(FMDatabase *db) {
         // 2.存储数据
-       result = [db executeUpdate:@"delete easytNote where idStr = ?", idStr];
+       result = [db executeUpdate:@"delete from easytNote where idStr = ?", idStr];
     }];
     return result;
 }
@@ -81,9 +81,13 @@ static FMDatabaseQueue *_queue;
     __block BOOL result;
     [_queue inDatabase:^(FMDatabase *db) {
         // 2.存储数据
-        result = [db executeUpdate:@"update easytNote set title = ?, content = ?addTime = ?  where idStr = ?",  model.title, model.content,model.addTime,idStr];
+//        [db executeQuery:@"delete easytNote where idStr = ?",idStr];
+//        
+//        result = [db executeUpdate:@"insert into easytNote (idStr, title, content, addTime) values(?,?,?,?)",[NSString idStr], model.title, model.content,[NSString getTime]];
+
+        result = [db executeUpdate:@"update easytNote set title = ?, content = ?,addTime = ? where idStr = ?",  model.title, model.content,[NSString getTime],idStr];
         if (result) {
-            [HUDTools showSuccess:@"保存成功"];
+//            [HUDTools showSuccess:@"保存成功"];
         }else{
             [HUDTools showError:@"保存失败"];
         }
@@ -105,7 +109,7 @@ static FMDatabaseQueue *_queue;
         // 创建数组
         array = [NSMutableArray array];
         FMResultSet *rs = nil;
-        rs = [db executeQuery:@"select * from easytNote order by id desc;"];
+        rs = [db executeQuery:@"select * from easytNote order by addTime desc;"];
         while (rs.next) {
             NoteModel *model = [[NoteModel alloc]init];
             model.idStr = [rs stringForColumn:@"idStr"];

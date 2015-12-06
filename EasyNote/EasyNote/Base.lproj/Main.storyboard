@@ -40,6 +40,7 @@
                     <connections>
                         <segue destination="eLi-dz-87e" kind="push" identifier="newNote" id="B5O-hb-c1c"/>
                         <segue destination="hud-0v-crT" kind="push" identifier="seeting" id="Axa-ML-Tbu"/>
+                        <segue destination="jzY-7M-MEb" kind="push" identifier="noteDetail" id="E5J-22-4m2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nrm-9J-kOV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -64,7 +65,27 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zrZ-3e-2mu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="721" y="361"/>
+            <point key="canvasLocation" x="691" y="550"/>
+        </scene>
+        <!--便签-->
+        <scene sceneID="qAw-Yh-btI">
+            <objects>
+                <viewController storyboardIdentifier="noteDetailVc" id="jzY-7M-MEb" customClass="NoteDetailController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LIQ-ip-K35"/>
+                        <viewControllerLayoutGuide type="bottom" id="nw1-Lb-XA0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="swx-YA-LRp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="便签" id="Irc-7n-OJP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zlu-Lc-KMH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1167" y="95"/>
         </scene>
         <!--新笔记-->
         <scene sceneID="cmY-Ph-fT7">
