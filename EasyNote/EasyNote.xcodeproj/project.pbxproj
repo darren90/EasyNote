@@ -16,9 +16,24 @@
 		FE309E3D1C06032400B5FE0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE309E3B1C06032400B5FE0D /* LaunchScreen.storyboard */; };
 		FE309E481C06032400B5FE0D /* EasyNoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE309E471C06032400B5FE0D /* EasyNoteTests.m */; };
 		FE309E531C06032400B5FE0D /* EasyNoteUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE309E521C06032400B5FE0D /* EasyNoteUITests.m */; };
-		FEF15C5E1C13E10100642E87 /* NoteListController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15C5D1C13E10100642E87 /* NoteListController.m */; };
-		FEF15C621C13E14100642E87 /* NoteListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15C601C13E14100642E87 /* NoteListCell.m */; };
-		FEF15C631C13E14100642E87 /* NoteListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEF15C611C13E14100642E87 /* NoteListCell.xib */; };
+		FEF15C971C13ED7A00642E87 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15C7B1C13ED7A00642E87 /* FMDatabase.m */; };
+		FEF15C981C13ED7A00642E87 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15C7D1C13ED7A00642E87 /* FMDatabaseAdditions.m */; };
+		FEF15C991C13ED7A00642E87 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15C7F1C13ED7A00642E87 /* FMDatabasePool.m */; };
+		FEF15C9A1C13ED7A00642E87 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15C811C13ED7A00642E87 /* FMDatabaseQueue.m */; };
+		FEF15C9B1C13ED7A00642E87 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15C841C13ED7A00642E87 /* FMResultSet.m */; };
+		FEF15C9C1C13ED7A00642E87 /* HUDTools.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15C871C13ED7A00642E87 /* HUDTools.m */; };
+		FEF15C9D1C13ED7A00642E87 /* RIButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15C891C13ED7A00642E87 /* RIButtonItem.m */; };
+		FEF15C9E1C13ED7A00642E87 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FEF15C8A1C13ED7A00642E87 /* SVProgressHUD.bundle */; };
+		FEF15C9F1C13ED7A00642E87 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15C8C1C13ED7A00642E87 /* SVProgressHUD.m */; };
+		FEF15CA01C13ED7A00642E87 /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15C8E1C13ED7A00642E87 /* UIAlertView+Blocks.m */; };
+		FEF15CA11C13ED7A00642E87 /* NSString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15C921C13ED7A00642E87 /* NSString+Category.m */; };
+		FEF15CA21C13ED7A00642E87 /* UIImage+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15C941C13ED7A00642E87 /* UIImage+Category.m */; };
+		FEF15CA31C13ED7A00642E87 /* FMDBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15C961C13ED7A00642E87 /* FMDBTool.m */; };
+		FEF15CB51C13EE0B00642E87 /* NoteListController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15CAB1C13EE0B00642E87 /* NoteListController.m */; };
+		FEF15CB61C13EE0B00642E87 /* NoteListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15CAF1C13EE0B00642E87 /* NoteListCell.m */; };
+		FEF15CB71C13EE0B00642E87 /* NoteListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEF15CB01C13EE0B00642E87 /* NoteListCell.xib */; };
+		FEF15CBA1C13EE2D00642E87 /* NoteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15CB91C13EE2D00642E87 /* NoteModel.m */; };
+		FEF15CBC1C13EF0B00642E87 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FEF15CBB1C13EF0B00642E87 /* libsqlite3.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,11 +74,40 @@
 		FE309E521C06032400B5FE0D /* EasyNoteUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EasyNoteUITests.m; sourceTree = "<group>"; };
 		FE309E541C06032400B5FE0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE309E601C060D7600B5FE0D /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		FEF15C5C1C13E10100642E87 /* NoteListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteListController.h; sourceTree = "<group>"; };
-		FEF15C5D1C13E10100642E87 /* NoteListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteListController.m; sourceTree = "<group>"; };
-		FEF15C5F1C13E14100642E87 /* NoteListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteListCell.h; sourceTree = "<group>"; };
-		FEF15C601C13E14100642E87 /* NoteListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteListCell.m; sourceTree = "<group>"; };
-		FEF15C611C13E14100642E87 /* NoteListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteListCell.xib; sourceTree = "<group>"; };
+		FEF15C7A1C13ED7A00642E87 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		FEF15C7B1C13ED7A00642E87 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		FEF15C7C1C13ED7A00642E87 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		FEF15C7D1C13ED7A00642E87 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		FEF15C7E1C13ED7A00642E87 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		FEF15C7F1C13ED7A00642E87 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		FEF15C801C13ED7A00642E87 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		FEF15C811C13ED7A00642E87 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		FEF15C821C13ED7A00642E87 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		FEF15C831C13ED7A00642E87 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		FEF15C841C13ED7A00642E87 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		FEF15C861C13ED7A00642E87 /* HUDTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDTools.h; sourceTree = "<group>"; };
+		FEF15C871C13ED7A00642E87 /* HUDTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDTools.m; sourceTree = "<group>"; };
+		FEF15C881C13ED7A00642E87 /* RIButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIButtonItem.h; sourceTree = "<group>"; };
+		FEF15C891C13ED7A00642E87 /* RIButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIButtonItem.m; sourceTree = "<group>"; };
+		FEF15C8A1C13ED7A00642E87 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		FEF15C8B1C13ED7A00642E87 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		FEF15C8C1C13ED7A00642E87 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		FEF15C8D1C13ED7A00642E87 /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
+		FEF15C8E1C13ED7A00642E87 /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Blocks.m"; sourceTree = "<group>"; };
+		FEF15C911C13ED7A00642E87 /* NSString+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Category.h"; sourceTree = "<group>"; };
+		FEF15C921C13ED7A00642E87 /* NSString+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Category.m"; sourceTree = "<group>"; };
+		FEF15C931C13ED7A00642E87 /* UIImage+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Category.h"; sourceTree = "<group>"; };
+		FEF15C941C13ED7A00642E87 /* UIImage+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Category.m"; sourceTree = "<group>"; };
+		FEF15C951C13ED7A00642E87 /* FMDBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDBTool.h; sourceTree = "<group>"; };
+		FEF15C961C13ED7A00642E87 /* FMDBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDBTool.m; sourceTree = "<group>"; };
+		FEF15CAA1C13EE0B00642E87 /* NoteListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteListController.h; sourceTree = "<group>"; };
+		FEF15CAB1C13EE0B00642E87 /* NoteListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteListController.m; sourceTree = "<group>"; };
+		FEF15CAE1C13EE0B00642E87 /* NoteListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteListCell.h; sourceTree = "<group>"; };
+		FEF15CAF1C13EE0B00642E87 /* NoteListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteListCell.m; sourceTree = "<group>"; };
+		FEF15CB01C13EE0B00642E87 /* NoteListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteListCell.xib; sourceTree = "<group>"; };
+		FEF15CB81C13EE2D00642E87 /* NoteModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteModel.h; sourceTree = "<group>"; };
+		FEF15CB91C13EE2D00642E87 /* NoteModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteModel.m; sourceTree = "<group>"; };
+		FEF15CBB1C13EF0B00642E87 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEF15CBC1C13EF0B00642E87 /* libsqlite3.tbd in Frameworks */,
 				98CA2AE5F65B68B49F48062F /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,6 +149,7 @@
 		C05F22983A8196E3090AC202 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FEF15CBB1C13EF0B00642E87 /* libsqlite3.tbd */,
 				F776B13C60E3DAE59427B60D /* libPods.a */,
 			);
 			name = Frameworks;
@@ -142,9 +188,6 @@
 			isa = PBXGroup;
 			children = (
 				FE309E681C07601D00B5FE0D /* Class */,
-				FEF15C501C13E0B500642E87 /* NewNote */,
-				FEF15C541C13E0B500642E87 /* NoteList */,
-				FEF15C581C13E0B500642E87 /* Setting */,
 				FE309E2D1C06032400B5FE0D /* Supporting Files */,
 			);
 			path = EasyNote;
@@ -182,6 +225,9 @@
 			isa = PBXGroup;
 			children = (
 				FE309E691C07601D00B5FE0D /* Main */,
+				FEF15CA41C13EE0B00642E87 /* NewNote */,
+				FEF15CA81C13EE0B00642E87 /* NoteList */,
+				FEF15CB11C13EE0B00642E87 /* Setting */,
 				FE309E6D1C07601D00B5FE0D /* Other */,
 			);
 			path = Class;
@@ -221,113 +267,170 @@
 		FE309E6D1C07601D00B5FE0D /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				FE309E6E1C07601D00B5FE0D /* Lib */,
+				FEF15C781C13ED7A00642E87 /* Lib */,
+				FEF15C8F1C13ED7A00642E87 /* Tools */,
 			);
 			path = Other;
 			sourceTree = "<group>";
 		};
-		FE309E6E1C07601D00B5FE0D /* Lib */ = {
+		FEF15C781C13ED7A00642E87 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				FEF15C791C13ED7A00642E87 /* fmdb */,
+				FEF15C851C13ED7A00642E87 /* HUD */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
 		};
-		FEF15C501C13E0B500642E87 /* NewNote */ = {
+		FEF15C791C13ED7A00642E87 /* fmdb */ = {
 			isa = PBXGroup;
 			children = (
-				FEF15C511C13E0B500642E87 /* Controller */,
-				FEF15C521C13E0B500642E87 /* Model */,
-				FEF15C531C13E0B500642E87 /* View */,
+				FEF15C7A1C13ED7A00642E87 /* FMDatabase.h */,
+				FEF15C7B1C13ED7A00642E87 /* FMDatabase.m */,
+				FEF15C7C1C13ED7A00642E87 /* FMDatabaseAdditions.h */,
+				FEF15C7D1C13ED7A00642E87 /* FMDatabaseAdditions.m */,
+				FEF15C7E1C13ED7A00642E87 /* FMDatabasePool.h */,
+				FEF15C7F1C13ED7A00642E87 /* FMDatabasePool.m */,
+				FEF15C801C13ED7A00642E87 /* FMDatabaseQueue.h */,
+				FEF15C811C13ED7A00642E87 /* FMDatabaseQueue.m */,
+				FEF15C821C13ED7A00642E87 /* FMDB.h */,
+				FEF15C831C13ED7A00642E87 /* FMResultSet.h */,
+				FEF15C841C13ED7A00642E87 /* FMResultSet.m */,
 			);
-			name = NewNote;
-			path = Class/Other/NewNote;
+			path = fmdb;
 			sourceTree = "<group>";
 		};
-		FEF15C511C13E0B500642E87 /* Controller */ = {
+		FEF15C851C13ED7A00642E87 /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				FEF15C861C13ED7A00642E87 /* HUDTools.h */,
+				FEF15C871C13ED7A00642E87 /* HUDTools.m */,
+				FEF15C881C13ED7A00642E87 /* RIButtonItem.h */,
+				FEF15C891C13ED7A00642E87 /* RIButtonItem.m */,
+				FEF15C8A1C13ED7A00642E87 /* SVProgressHUD.bundle */,
+				FEF15C8B1C13ED7A00642E87 /* SVProgressHUD.h */,
+				FEF15C8C1C13ED7A00642E87 /* SVProgressHUD.m */,
+				FEF15C8D1C13ED7A00642E87 /* UIAlertView+Blocks.h */,
+				FEF15C8E1C13ED7A00642E87 /* UIAlertView+Blocks.m */,
+			);
+			path = HUD;
+			sourceTree = "<group>";
+		};
+		FEF15C8F1C13ED7A00642E87 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				FEF15C901C13ED7A00642E87 /* Category */,
+				FEF15C951C13ED7A00642E87 /* FMDBTool.h */,
+				FEF15C961C13ED7A00642E87 /* FMDBTool.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		FEF15C901C13ED7A00642E87 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				FEF15C911C13ED7A00642E87 /* NSString+Category.h */,
+				FEF15C921C13ED7A00642E87 /* NSString+Category.m */,
+				FEF15C931C13ED7A00642E87 /* UIImage+Category.h */,
+				FEF15C941C13ED7A00642E87 /* UIImage+Category.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		FEF15CA41C13EE0B00642E87 /* NewNote */ = {
+			isa = PBXGroup;
+			children = (
+				FEF15CA51C13EE0B00642E87 /* Controller */,
+				FEF15CA61C13EE0B00642E87 /* Model */,
+				FEF15CA71C13EE0B00642E87 /* View */,
+			);
+			path = NewNote;
+			sourceTree = "<group>";
+		};
+		FEF15CA51C13EE0B00642E87 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		FEF15C521C13E0B500642E87 /* Model */ = {
+		FEF15CA61C13EE0B00642E87 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FEF15CB81C13EE2D00642E87 /* NoteModel.h */,
+				FEF15CB91C13EE2D00642E87 /* NoteModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		FEF15C531C13E0B500642E87 /* View */ = {
+		FEF15CA71C13EE0B00642E87 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		FEF15C541C13E0B500642E87 /* NoteList */ = {
+		FEF15CA81C13EE0B00642E87 /* NoteList */ = {
 			isa = PBXGroup;
 			children = (
-				FEF15C551C13E0B500642E87 /* Controller */,
-				FEF15C561C13E0B500642E87 /* Model */,
-				FEF15C571C13E0B500642E87 /* View */,
+				FEF15CA91C13EE0B00642E87 /* Controller */,
+				FEF15CAC1C13EE0B00642E87 /* Model */,
+				FEF15CAD1C13EE0B00642E87 /* View */,
 			);
-			name = NoteList;
-			path = Class/Other/NoteList;
+			path = NoteList;
 			sourceTree = "<group>";
 		};
-		FEF15C551C13E0B500642E87 /* Controller */ = {
+		FEF15CA91C13EE0B00642E87 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				FEF15C5C1C13E10100642E87 /* NoteListController.h */,
-				FEF15C5D1C13E10100642E87 /* NoteListController.m */,
+				FEF15CAA1C13EE0B00642E87 /* NoteListController.h */,
+				FEF15CAB1C13EE0B00642E87 /* NoteListController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		FEF15C561C13E0B500642E87 /* Model */ = {
+		FEF15CAC1C13EE0B00642E87 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		FEF15C571C13E0B500642E87 /* View */ = {
+		FEF15CAD1C13EE0B00642E87 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FEF15C5F1C13E14100642E87 /* NoteListCell.h */,
-				FEF15C601C13E14100642E87 /* NoteListCell.m */,
-				FEF15C611C13E14100642E87 /* NoteListCell.xib */,
+				FEF15CAE1C13EE0B00642E87 /* NoteListCell.h */,
+				FEF15CAF1C13EE0B00642E87 /* NoteListCell.m */,
+				FEF15CB01C13EE0B00642E87 /* NoteListCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		FEF15C581C13E0B500642E87 /* Setting */ = {
+		FEF15CB11C13EE0B00642E87 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				FEF15C591C13E0B500642E87 /* Controller */,
-				FEF15C5A1C13E0B500642E87 /* Model */,
-				FEF15C5B1C13E0B500642E87 /* View */,
+				FEF15CB21C13EE0B00642E87 /* Controller */,
+				FEF15CB31C13EE0B00642E87 /* Model */,
+				FEF15CB41C13EE0B00642E87 /* View */,
 			);
-			name = Setting;
-			path = Class/Other/Setting;
+			path = Setting;
 			sourceTree = "<group>";
 		};
-		FEF15C591C13E0B500642E87 /* Controller */ = {
+		FEF15CB21C13EE0B00642E87 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		FEF15C5A1C13E0B500642E87 /* Model */ = {
+		FEF15CB31C13EE0B00642E87 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		FEF15C5B1C13E0B500642E87 /* View */ = {
+		FEF15CB41C13EE0B00642E87 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -439,10 +542,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEF15C9E1C13ED7A00642E87 /* SVProgressHUD.bundle in Resources */,
 				FE309E3D1C06032400B5FE0D /* LaunchScreen.storyboard in Resources */,
 				FE309E3A1C06032400B5FE0D /* Assets.xcassets in Resources */,
+				FEF15CB71C13EE0B00642E87 /* NoteListCell.xib in Resources */,
 				FE309E381C06032400B5FE0D /* Main.storyboard in Resources */,
-				FEF15C631C13E14100642E87 /* NoteListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,10 +605,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE309E351C06032400B5FE0D /* ViewController.m in Sources */,
-				FEF15C5E1C13E10100642E87 /* NoteListController.m in Sources */,
+				FEF15CBA1C13EE2D00642E87 /* NoteModel.m in Sources */,
 				FE309E321C06032400B5FE0D /* AppDelegate.m in Sources */,
+				FEF15C9D1C13ED7A00642E87 /* RIButtonItem.m in Sources */,
+				FEF15C9C1C13ED7A00642E87 /* HUDTools.m in Sources */,
+				FEF15C971C13ED7A00642E87 /* FMDatabase.m in Sources */,
+				FEF15CB51C13EE0B00642E87 /* NoteListController.m in Sources */,
+				FEF15CB61C13EE0B00642E87 /* NoteListCell.m in Sources */,
+				FEF15C9B1C13ED7A00642E87 /* FMResultSet.m in Sources */,
+				FEF15CA31C13ED7A00642E87 /* FMDBTool.m in Sources */,
+				FEF15CA21C13ED7A00642E87 /* UIImage+Category.m in Sources */,
 				FE309E2F1C06032400B5FE0D /* main.m in Sources */,
-				FEF15C621C13E14100642E87 /* NoteListCell.m in Sources */,
+				FEF15C991C13ED7A00642E87 /* FMDatabasePool.m in Sources */,
+				FEF15C9F1C13ED7A00642E87 /* SVProgressHUD.m in Sources */,
+				FEF15C981C13ED7A00642E87 /* FMDatabaseAdditions.m in Sources */,
+				FEF15CA01C13ED7A00642E87 /* UIAlertView+Blocks.m in Sources */,
+				FEF15CA11C13ED7A00642E87 /* NSString+Category.m in Sources */,
+				FEF15C9A1C13ED7A00642E87 /* FMDatabaseQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
