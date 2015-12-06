@@ -49,4 +49,12 @@ static NSString *token = @"sdf@@asdasdasd@%%%sdf";
     return idStr;
 }
 
++(NSString *)getTime
+{
+    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+    fmt.dateFormat = @"yyyy-MM-dd";
+    NSString *addTime = [fmt stringFromDate:[NSDate new]];
+    return addTime;
+}
+
 @end

@@ -35,6 +35,10 @@ static NSString *const IDENTTFIER = @"notelist";
 {
     [super viewWillAppear:animated];
     [MobClick beginLogPageView:@"Page_便签列表"];
+    
+    [self.dataArray removeAllObjects];
+    [self.dataArray addObjectsFromArray:[FMDBTool getAllNotes]];
+    [self.waterView reloadData];
 }
 
 - (void)viewDidLoad {
@@ -111,13 +115,13 @@ static NSString *const IDENTTFIER = @"notelist";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 10;//self.dataArray.count;
+    return self.dataArray.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NoteListCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:IDENTTFIER forIndexPath:indexPath];
-//    cell.model = self.dataArray[indexPath.item];
+    cell.model = self.dataArray[indexPath.item];
 //    cell.backgroundColor = [UIColor grayColor];
     return cell;
 }

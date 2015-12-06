@@ -29,4 +29,11 @@
  *  @return 主键
  */
 +(NSString *)idStr;
+
+/**
+ *  得到时间的字符串格式
+ *
+ *  @return "yyyy-MM-dd"格式的时间
+ */
++(NSString *)getTime;
 @end

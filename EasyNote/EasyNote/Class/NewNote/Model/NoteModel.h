@@ -27,4 +27,9 @@
  */
 @property (nonatomic,copy)NSString * addTime;
 
+
+-(instancetype)initWithIdStr:(NSString *)idStr title:(NSString *)title content:(NSString *)content addTime:(NSString *)addTime;
+
++(instancetype)noteWithIdStr:(NSString *)idStr title:(NSString *)title content:(NSString *)content addTime:(NSString *)addTime;
++(instancetype)noteWithIdStr:(NSString *)idStr title:(NSString *)title content:(NSString *)content;
 @end

@@ -7,11 +7,8 @@
 //
 
 #import "FMDBTool.h"
-#import "FMDB.h"
-
+#import "FMDB.h"   
 #import "NoteModel.h"
-//#import "NoteMarkModel.h"
-//#import "NoteBookModel.h"
 
 @implementation FMDBTool
 
@@ -25,10 +22,10 @@ static FMDatabaseQueue *_queue;
     
     // 2.创表
     [_queue inDatabase:^(FMDatabase *db) {
-        //idStr title content location addTime lastModifyTime --markArray
+        //idStr title content location addTime
         
         //idStr:主键，唯一不变的量：创建笔记的时间取md5加密后的唯一字符串
-        [db executeUpdate:@"create table if not exists easytNote (id integer primary key autoincrement,idStr text,title text,content text,collect BOOLEAN, addTime text);"];
+        [db executeUpdate:@"create table if not exists easytNote (id integer primary key autoincrement,idStr text,title text,content text, addTime text);"];
     }];
 }
 
@@ -45,12 +42,12 @@ static FMDatabaseQueue *_queue;
     __block BOOL result;
     [_queue inDatabase:^(FMDatabase *db) {
         // 2.存储数据
-        NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
-        fmt.dateFormat = @"yyyy-MM-dd";
-        NSString *addTime = [fmt stringFromDate:[NSDate date]];
-        result = [db executeUpdate:@"insert into easytNote (idStr, title, content, addTime) values(?,?,?,?)",idStr, model.title, model.content,addTime];
+//        NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+//        fmt.dateFormat = @"yyyy-MM-dd";
+//        NSString *addTime = [fmt stringFromDate:[NSDate date]];
+        result = [db executeUpdate:@"insert into easytNote (idStr, title, content, addTime) values(?,?,?,?)",idStr, model.title, model.content,[NSString getTime]];
         if (result) {
-            [HUDTools showSuccess:@"保存成功"];
+//            [HUDTools showSuccess:@"保存成功"];
         }else{
             [HUDTools showError:@"保存失败"];
         }

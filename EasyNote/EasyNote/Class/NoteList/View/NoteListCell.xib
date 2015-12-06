@@ -44,6 +44,10 @@
                 <constraint firstAttribute="trailing" secondItem="i1b-R7-N6V" secondAttribute="trailing" constant="8" id="aY4-kf-ojC"/>
                 <constraint firstItem="4UF-fj-xSS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="fBs-ak-F1l"/>
             </constraints>
+            <connections>
+                <outlet property="timeLabel" destination="i1b-R7-N6V" id="BLX-Nz-cog"/>
+                <outlet property="titleLabel" destination="4UF-fj-xSS" id="gOo-xH-tiU"/>
+            </connections>
         </collectionViewCell>
     </objects>
 </document>
