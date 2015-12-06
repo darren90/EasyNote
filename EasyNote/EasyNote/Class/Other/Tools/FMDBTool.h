@@ -7,35 +7,41 @@
 //
 
 #import <Foundation/Foundation.h>
-@class NoteModel,NoteMarkModel;
+@class NoteModel;
 
 @interface FMDBTool : NSObject
 
 /********* 笔记 *************/
+
+/**
+*  添加笔记
+*
+*  @param model NoteModel
+*  @param idStr 主键
+*
+*  @return 是否添加成功
+*/
 +(BOOL)addNoteWithNoteModel:(NoteModel *)model idStr:(NSString *)idStr;
-+(void)delNoteWithIdStr:(NSString *)idStr;
+/**
+ *  删除笔记
+ *
+ *  @param idStr 主键
+ */
++(BOOL)delNoteWithIdStr:(NSString *)idStr;
+/**
+ *  修改笔记
+ *
+ *  @param model NoteModel
+ *  @param idStr 主键
+ *
+ *  @return 是否修改成功
+ */
 +(BOOL)modifyNoteWithNoteModel:(NoteModel *)model idStr:(NSString *)idStr;
-+(NSArray *)getNoteWithDate:(NSString *)dateStr;
-+(NSArray *)getAllNote;
-+(int)getAllNoteCount;
-+(int)getAllNoteCollectedCount;
-/** 得到全部的笔记，是否收藏：YES:收藏，NO： */
-+(NSArray *)getAllNoteIfCollect:(BOOL)isCollect;
-
-+(NSArray *)getAllLocations;
-
-/********* 标签 *************/
-+(BOOL)addNoteMarkWithNoteModel:(NoteMarkModel *)model idStr:(NSString *)idStr;;
-+(void)delNoteMarkWithIdStr:(NSString *)idStr mark:(NSString *)mark;
-+(void)modifyNoteMarkWithNoteModel:(NoteMarkModel *)model;
-+(NSArray *)getAllNoteMarks;
-+(int)getAllNoteMarksCount;
-
-
-/********* 笔记本 *************/
-+(BOOL)addBookWithBookName:(NSString *)bookName;
-+(void)delBookWithBookName:(NSString *)bookName;
-+(void)modifyBookWithBookName:(NSString *)bookName;
-+(NSArray *)getAllBooks;
-+(int)getAllBooksCount;;
+/**
+ *  取出所有的笔记
+ *
+ *  @return NoteModel数组
+ */
++(NSArray *)getAllNotes;
+ 
 @end

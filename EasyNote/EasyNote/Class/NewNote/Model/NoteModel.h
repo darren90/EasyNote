@@ -13,7 +13,7 @@
 /**
  *  时间 ： 创建时间/修改时间
  */
-@property (nonatomic,copy)NSString * time;
+@property (nonatomic,copy)NSString * idStr;
 /**
  *  便签标题
  */
@@ -22,6 +22,9 @@
  *  便签内容
  */
 @property (nonatomic,copy)NSString * content;
-
+/**
+ *  时间 ： 创建时间/修改时间
+ */
+@property (nonatomic,copy)NSString * addTime;
 
 @end

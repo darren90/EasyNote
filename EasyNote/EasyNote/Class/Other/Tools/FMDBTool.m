@@ -1,6 +1,6 @@
 //
 //  FMDBTool.m
-//  SmartNote
+//  easytNote
 //
 //  Created by Fengtf on 15/8/8.
 //  Copyright (c) 2015年 ftf. All rights reserved.
@@ -16,12 +16,10 @@
 @implementation FMDBTool
 
 static FMDatabaseQueue *_queue;
-
 + (void)initialize
 {
     // 0.获得沙盒中的数据库文件名
-    NSString *path = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"smartNote.sqlite"];
-    
+    NSString *path = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"easytNote.sqlite"];
     // 1.创建队列
     _queue = [FMDatabaseQueue databaseQueueWithPath:path];
     
@@ -30,31 +28,112 @@ static FMDatabaseQueue *_queue;
         //idStr title content location addTime lastModifyTime --markArray
         
         //idStr:主键，唯一不变的量：创建笔记的时间取md5加密后的唯一字符串
-        [db executeUpdate:@"create table if not exists smartNote (id integer primary key autoincrement,idStr text,title text,content text,book text,location text,collect BOOLEAN, addTime text, modifyTime text);"];
-        
-        //标签
-        [db executeUpdate:@"create table if not exists smartMark (id integer primary key autoincrement,idStr text,mark text);"];
-        
-        //笔记本
-        [db executeUpdate:@"create table if not exists smartBook (id integer primary key autoincrement,bookName text);"];
+        [db executeUpdate:@"create table if not exists easytNote (id integer primary key autoincrement,idStr text,title text,content text,collect BOOLEAN, addTime text);"];
     }];
 }
+
+/**
+ *  添加笔记
+ *
+ *  @param model NoteModel
+ *  @param idStr 主键
+ *
+ *  @return 是否添加成功
+ */
++(BOOL)addNoteWithNoteModel:(NoteModel *)model idStr:(NSString *)idStr
+{
+    __block BOOL result;
+    [_queue inDatabase:^(FMDatabase *db) {
+        // 2.存储数据
+        NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+        fmt.dateFormat = @"yyyy-MM-dd";
+        NSString *addTime = [fmt stringFromDate:[NSDate date]];
+        result = [db executeUpdate:@"insert into easytNote (idStr, title, content, addTime) values(?,?,?,?)",idStr, model.title, model.content,addTime];
+        if (result) {
+            [HUDTools showSuccess:@"保存成功"];
+        }else{
+            [HUDTools showError:@"保存失败"];
+        }
+    }];
+    return result;
+}
+/**
+ *  删除笔记
+ *
+ *  @param idStr 主键
+ */
++(BOOL)delNoteWithIdStr:(NSString *)idStr
+{
+    __block BOOL result;
+    [_queue inDatabase:^(FMDatabase *db) {
+        // 2.存储数据
+       result = [db executeUpdate:@"delete easytNote where idStr = ?", idStr];
+    }];
+    return result;
+}
+/**
+ *  修改笔记
+ *
+ *  @param model NoteModel
+ *  @param idStr 主键
+ *
+ *  @return 是否修改成功
+ */
++(BOOL)modifyNoteWithNoteModel:(NoteModel *)model idStr:(NSString *)idStr
+{
+    __block BOOL result;
+    [_queue inDatabase:^(FMDatabase *db) {
+        // 2.存储数据
+        result = [db executeUpdate:@"update easytNote set title = ?, content = ?addTime = ?  where idStr = ?",  model.title, model.content,model.addTime,idStr];
+        if (result) {
+            [HUDTools showSuccess:@"保存成功"];
+        }else{
+            [HUDTools showError:@"保存失败"];
+        }
+    }];
+    return result;
+}
+/**
+ *  取出所有的笔记
+ *
+ *  @return NoteModel数组
+ */
++(NSArray *)getAllNotes
+{
+    // 1.定义数组
+    __block NSMutableArray *array = nil;
+    
+    // 2.使用数据库
+    [_queue inDatabase:^(FMDatabase *db) {
+        // 创建数组
+        array = [NSMutableArray array];
+        FMResultSet *rs = nil;
+        rs = [db executeQuery:@"select * from easytNote order by id desc;"];
+        while (rs.next) {
+            NoteModel *model = [[NoteModel alloc]init];
+            model.idStr = [rs stringForColumn:@"idStr"];
+            model.title = [rs stringForColumn:@"title"];
+            model.content = [rs stringForColumn:@"content"];
+            model.addTime = [rs stringForColumn:@"addTime"];
+            [array addObject:model];
+        }
+    }];
+    // 3.返回数据
+    return array;
+}
+
+
+
 #if 0
 +(BOOL)addNoteWithNoteModel:(NoteModel *)model idStr:(NSString *)idStr
 {
     __block BOOL result;
     [_queue inDatabase:^(FMDatabase *db) {
         // 2.存储数据
-        
-//        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-//        dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
-//        NSString *strDate = [dateFormatter stringFromDate:[NSDate new]];
-//        NSString *idStr = [strDate myMD5];
- 
         NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
         fmt.dateFormat = @"yyyy-MM-dd";
         NSString *addTime = [fmt stringFromDate:[NSDate new]];
-        result = [db executeUpdate:@"insert into smartNote (idStr, title, content,book,collect,location, addTime) values(?,?,?,?,?,?,?)",idStr, model.title, model.content,model.book,@(model.collect),model.location,addTime];
+        result = [db executeUpdate:@"insert into easytNote (idStr, title, content, addTime) values(?,?,?,?)",idStr, model.title, model.content,addTime];
         if (result) {
             [HUDTools showSuccess:@"保存成功"];
         }else{
@@ -67,7 +146,7 @@ static FMDatabaseQueue *_queue;
 {
     [_queue inDatabase:^(FMDatabase *db) {
         // 2.存储数据
-        [db executeUpdate:@"delete smartNote where idStr = ?", idStr];
+        [db executeUpdate:@"delete easytNote where idStr = ?", idStr];
     }];
 }
 +(NSArray *)getNoteWithDate:(NSString *)dateStr
@@ -82,7 +161,7 @@ static FMDatabaseQueue *_queue;
         
         FMResultSet *rs = nil;
  
-        rs = [db executeQuery:@"select * from smartNote where addTime = ? order by id desc;",dateStr];
+        rs = [db executeQuery:@"select * from easytNote where addTime = ? order by id desc;",dateStr];
         while (rs.next) {
 //            idStr text,title text,content text,book text,location text,collect integer, addTime timestamp, modifyTime timestamp
             NoteModel *model = [[NoteModel alloc]init];
@@ -120,7 +199,7 @@ static FMDatabaseQueue *_queue;
         
         FMResultSet *rs = nil;
         
-        rs = [db executeQuery:@"select * from smartNote order by id desc;"];
+        rs = [db executeQuery:@"select * from easytNote order by id desc;"];
         while (rs.next) {
             //            idStr text,title text,content text,book text,location text,collect integer, addTime timestamp, modifyTime timestamp
             NoteModel *model = [[NoteModel alloc]init];
@@ -151,7 +230,7 @@ static FMDatabaseQueue *_queue;
 {
     __block int count = 0;
     [_queue inDatabase:^(FMDatabase *db) {
-       count = [db intForQuery:@"select count(idStr) from smartNote "];
+       count = [db intForQuery:@"select count(idStr) from easytNote "];
     }];
     return count  ;
 }
@@ -159,7 +238,7 @@ static FMDatabaseQueue *_queue;
 {
     __block int count = 0;
     [_queue inDatabase:^(FMDatabase *db) {
-        count = [db intForQuery:@"select count(idStr) from smartNote where collect = 1 "];
+        count = [db intForQuery:@"select count(idStr) from easytNote where collect = 1 "];
     }];
     return count ;
 }
@@ -170,7 +249,7 @@ static FMDatabaseQueue *_queue;
     [_queue inDatabase:^(FMDatabase *db) {
         array = [NSMutableArray array];
         FMResultSet *rs = nil;
-        rs = [db executeQuery:@"select distinct location from smartNote order by id desc;"];
+        rs = [db executeQuery:@"select distinct location from easytNote order by id desc;"];
         while (rs.next) {
             NSString *location = [rs stringForColumn:@"location"];
             if (location != nil) {
@@ -193,7 +272,7 @@ static FMDatabaseQueue *_queue;
         
         FMResultSet *rs = nil;
         
-        rs = [db executeQuery:@"select * from smartNote where collect = ? order by id desc;",@(isCollect)];
+        rs = [db executeQuery:@"select * from easytNote where collect = ? order by id desc;",@(isCollect)];
         while (rs.next) {
             //            idStr text,title text,content text,book text,location text,collect integer, addTime timestamp, modifyTime timestamp
             NoteModel *model = [[NoteModel alloc]init];
@@ -231,7 +310,7 @@ static FMDatabaseQueue *_queue;
         fmt.dateFormat = @"yyyy-MM-dd";
  
         NSString *addTime = [fmt stringFromDate:[NSDate new]];
-        result = [db executeUpdate:@"update smartNote set title = ?, content = ?,book = ?,collect = ?,location=?, addTime = ?  where idStr = ?",  model.title, model.content,model.book,@(model.collect),model.location,addTime,idStr];
+        result = [db executeUpdate:@"update easytNote set title = ?, content = ?,book = ?,collect = ?,location=?, addTime = ?  where idStr = ?",  model.title, model.content,model.book,@(model.collect),model.location,addTime,idStr];
         if (result) {
             [HUDTools showSuccess:@"保存成功"];
         }else{
@@ -321,8 +400,8 @@ static FMDatabaseQueue *_queue;
         // 2.存储数据
         [db executeUpdate:@"delete from smartBook where bookName = ?",bookName];
         
-        //笔记smartNote表更新
-        BOOL result =[db executeUpdate:@"update smartNote set book = '' where book = ?;",bookName];
+        //笔记easytNote表更新
+        BOOL result =[db executeUpdate:@"update easytNote set book = '' where book = ?;",bookName];
         NSLog(@"---");
     }];
 }
@@ -341,7 +420,7 @@ static FMDatabaseQueue *_queue;
         rs = [db executeQuery:@"select * from smartBook order by id asc;"];
         while (rs.next) {
             NSString *bookName = [rs stringForColumn:@"bookName"];
-            int bookCount = [db intForQuery:@"select count(book) from smartNote where book = ?;",bookName];
+            int bookCount = [db intForQuery:@"select count(book) from easytNote where book = ?;",bookName];
             NoteBookModel *model = [NoteBookModel noteBookWithBookName:bookName bookCount:bookCount];
             [array addObject:model];
         }
