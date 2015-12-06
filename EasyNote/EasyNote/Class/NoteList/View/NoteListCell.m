@@ -31,7 +31,7 @@
 -(void)didDelSelf:(UIGestureRecognizer *)gesture
 {
 //    NSLog(@"-state-:%ld",(long)gesture.state);
-    if (gesture.state == UIGestureRecognizerStateRecognized) {
+    if (gesture.state == UIGestureRecognizerStateBegan) {
         if ([self.delegate respondsToSelector:@selector(noteListCellDidDeleteThisItem:)]) {
             [self.delegate noteListCellDidDeleteThisItem:self.model];
         }

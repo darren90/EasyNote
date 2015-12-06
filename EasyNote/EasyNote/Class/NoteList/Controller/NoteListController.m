@@ -90,7 +90,7 @@ static NSString *const IDENTTFIER = @"notelist";
     flowLayout.minimumLineSpacing = 10;// =70/3
     flowLayout.minimumInteritemSpacing = 7;
     //flowLayout.headerReferenceSize = CGSizeMake(10, 10);
-    flowLayout.sectionInset = UIEdgeInsetsMake(section,section,0,section);
+    flowLayout.sectionInset = UIEdgeInsetsMake(section,section,section,section);
 }
 
 -(void)jumpToSeeting

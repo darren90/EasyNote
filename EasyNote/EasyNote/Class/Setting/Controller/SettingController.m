@@ -43,7 +43,7 @@
     
     // 2.添加数据
     [self setupGroup_0];
-    [self setupGroup0];
+//    [self setupGroup0];
     [self setupGroup1];
     [self setupGroup2];
 }
@@ -67,12 +67,13 @@
 - (void)setupGroup_0
 {
     //begain
-    SettingItem *login = [SettingItem itemWithTitle:@"操作:长按删除笔记"];
+    SettingItem *login = [SettingItem itemWithTitle:@"长按删除笔记"];
  
     
     SettingGroup *group = [[SettingGroup alloc] init];
     //    self.dataArray = @[login,synch];
     group.items = @[login];
+    group.header = @"操作";
     
     [self.data addObject:group];
 }
@@ -100,14 +101,26 @@
  */
 - (void)setupGroup1
 {
-    SettingItem *mark = [SettingItem itemWithTitle:@"去App Store评分"];
+    SettingItem *mark = [SettingArrowItem itemWithTitle:@"去App Store评分"];
     mark.option =  ^{
-        NSString *str = @"https://itunes.apple.com/cn/app/ren-ren-mei-ju-zhong-guo-zui/id952950430?mt=8";
+        NSString *str = [NSString stringWithFormat:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=%@&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8",KAppid];
+        
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
     };
+    SettingItem *suggest = [SettingArrowItem itemWithTitle:@"建议"];
+    suggest.option = ^{
+        NSString *stringURL = @"mailto:fengtenfei90@163.com";
+        NSURL *url = [NSURL URLWithString:stringURL];
+        [[UIApplication sharedApplication] openURL:url];
+    };
+    NSString *currentVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
+    NSString *title = [NSString stringWithFormat:@"当前版本 (V:%@)",currentVersion];
+    SettingItem *version = [SettingItem itemWithTitle:title];
+
     
     SettingGroup *group = [[SettingGroup alloc] init];
-    group.items = @[mark];
+    group.items = @[mark,suggest];
+    group.header = @"APP";
 
     [self.data addObject:group];
 }
@@ -118,25 +131,27 @@
  */
 - (void)setupGroup2
 {
-    SettingItem *suggest = [SettingArrowItem itemWithTitle:@"建议"];
-    SettingItem *about = [SettingArrowItem itemWithTitle:@"关于"];
+    SettingItem *weibo = [SettingItem itemWithTitle:@"微博ID：STRING冯"];
+    SettingItem *about = [SettingItem itemWithTitle:@"程序员，iOS开发者，热爱编程，热爱生活！"];
     
     SettingGroup *group = [[SettingGroup alloc] init];
-    group.items = @[suggest,about];
+    group.items = @[weibo,about];
+    group.header = @"关于";
  
     [self.data addObject:group];
 }
-
-
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex == 0)return;//取消按钮
-    NSString *str = @"https://itunes.apple.com/cn/app/ren-ren-mei-ju-zhong-guo-zui/id952950430?mt=8";
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
-}
+ 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    if (indexPath.section == 1 && indexPath.row == 0) {
+        NSString *str = [NSString stringWithFormat:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=%@&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8",KAppid];
+        
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+    }else if (indexPath.section == 1 && indexPath.row == 1){
+        NSString *stringURL = @"mailto:fengtenfei90@163.com";
+        NSURL *url = [NSURL URLWithString:stringURL];
+        [[UIApplication sharedApplication] openURL:url];
+    }
     
 }
 

@@ -53,7 +53,7 @@
 #define KUrl(s) [NSURL URLWithString:s]
 
 #define KSettingUse3G           @"网络提示"     //设置中 是否使用3G的
-#define KAppid                  @"1061374229"
+#define KAppid                  @"1065348807"
 
 //随机色
 #define KRandomColor     [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0];

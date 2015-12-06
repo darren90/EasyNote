@@ -55,7 +55,8 @@
     // 2.给cell传递模型数据
     SettingGroup *group = self.data[indexPath.section];
     cell.item = group.items[indexPath.row];
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
     // 3.返回cell
     return cell;
 }
@@ -83,6 +84,29 @@
     }
 }
 
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    NSString *sectionTitle = [self tableView:tableView titleForFooterInSection:section];
+    if (sectionTitle == nil) {
+        return nil;
+    }
+    
+    CGSize footerSize = [sectionTitle sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:11]}];;//
+    
+    UILabel *label = [[UILabel alloc] init];
+    label.frame = CGRectMake((self.view.frame.size.width-footerSize.width)/2, 8, footerSize.width, footerSize.height);
+    label.numberOfLines=0;
+    label.textColor = [UIColor lightGrayColor];
+    label.font = [UIFont systemFontOfSize:11];
+    label.text = sectionTitle;
+    
+    UIView *view = [[UIView alloc] init];
+    [view addSubview:label];
+    view.backgroundColor = [UIColor whiteColor];
+    
+    return view;
+}
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     SettingGroup *group = self.data[section];
@@ -107,6 +131,7 @@
     
     UIView *view = [[UIView alloc] init];
     [view addSubview:label];
+    view.backgroundColor = [UIColor whiteColor];
     
     return view;
 }
@@ -116,4 +141,16 @@
     SettingGroup *group = self.data[section];
     return group.footer;
 }
+
+//-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+//{
+//    SettingGroup *group = self.data[section];
+//    return group.header.length > 0 ? 30 : 0.00000001;
+//}
+//-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+//{
+//    SettingGroup *group = self.data[section];
+//    return group.footer.length > 0 ? 30 : 0.00000001;
+//}
+
 @end
