@@ -139,7 +139,7 @@
  
     [self.data addObject:group];
 }
- 
+// http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=1065348807&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 1 && indexPath.row == 0) {
