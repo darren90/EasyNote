@@ -81,6 +81,7 @@ static NSString *const IDENTTFIER = @"notelist";
     waterView.dataSource = self;
     self.waterView = waterView;
     waterView.backgroundColor = KColor(245, 245, 245);
+    waterView.alwaysBounceVertical = YES;
     
     CGFloat section = 10;
     int imgW = (KWidth - 3*section) / 2;
