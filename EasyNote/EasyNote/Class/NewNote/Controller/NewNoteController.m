@@ -45,8 +45,8 @@
     textView.font = [UIFont systemFontOfSize:18];
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textHadhage) name:UITextViewTextDidChangeNotification object:nil];
-    
 }
+
 -(void)back
 {
     NSString *content = self.textView.text;
