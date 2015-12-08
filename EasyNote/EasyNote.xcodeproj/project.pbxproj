@@ -574,6 +574,7 @@
 				TargetAttributes = {
 					FE309E291C06032400B5FE0D = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 68539G8D3N;
 					};
 					FE309E421C06032400B5FE0D = {
 						CreatedOnToolsVersion = 7.1;
@@ -846,6 +847,7 @@
 			baseConfigurationReference = 51B62A3E5160BFFED6B39946 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = EasyNote/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -859,6 +861,7 @@
 			baseConfigurationReference = 41D461D2DDD8EEEC0E649383 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = EasyNote/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
