@@ -13,6 +13,7 @@
 #import "SettingLabelItem.h"
 #import "SettingGroup.h"
 
+#import "CommonUtils.h"
 #import <ENSDK.h>
 @interface SettingController ()
 @property (nonatomic,strong)NSMutableArray *dataArray ;
@@ -152,7 +153,7 @@
         NSURL *url = [NSURL URLWithString:stringURL];
         [[UIApplication sharedApplication] openURL:url];
     }else if (indexPath.section == 1 && indexPath.row == 0){//第一区，登陆EverNote
-    
+        [self logInOrLogOut];
     }
     
 }
@@ -182,7 +183,7 @@
     } else {
         [self.navigationItem setTitle:nil];
     }
-    [self updateLoginItem];
+//    [self updateLoginItem];//更新登陆/登出的状态显示
     
     [self.tableView reloadData];
 }
