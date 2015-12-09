@@ -7,6 +7,7 @@ pod 'MJRefresh'
 pod 'MJExtension'
 pod 'Bugly'
 pod 'UMengAnalytics'##标准SDK，含IDFA
+pod 'evernote-cloud-sdk-ios' ##evernote
 
 
 target 'EasyNote' do
