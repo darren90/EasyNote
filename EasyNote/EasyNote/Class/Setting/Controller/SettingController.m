@@ -13,6 +13,7 @@
 #import "SettingLabelItem.h"
 #import "SettingGroup.h"
 
+#import <ENSDK.h>
 @interface SettingController ()
 @property (nonatomic,strong)NSMutableArray *dataArray ;
 @end
@@ -43,7 +44,7 @@
     
     // 2.添加数据
     [self setupGroup_0];
-//    [self setupGroup0];
+    [self setupGroup0];
     [self setupGroup1];
     [self setupGroup2];
 }
@@ -90,8 +91,8 @@
     SettingItem *synch = [SettingLabelItem itemWithTitle:@"同步笔记"];
     
     SettingGroup *group = [[SettingGroup alloc] init];
-    //    self.dataArray = @[login,synch];
     group.items = @[login,synch];
+    group.header = @"同步";
     
     [self.data addObject:group];
 }
@@ -142,17 +143,50 @@
 // http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=1065348807&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 1 && indexPath.row == 0) {
+    if (indexPath.section == 2 && indexPath.row == 0) {//第二区，App Store评价
         NSString *str = [NSString stringWithFormat:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=%@&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8",KAppid];
         
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
-    }else if (indexPath.section == 1 && indexPath.row == 1){
+    }else if (indexPath.section == 2 && indexPath.row == 1){//第二区，App Store建议
         NSString *stringURL = @"mailto:fengtenfei90@163.com";
         NSURL *url = [NSURL URLWithString:stringURL];
         [[UIApplication sharedApplication] openURL:url];
+    }else if (indexPath.section == 1 && indexPath.row == 0){//第一区，登陆EverNote
+    
     }
     
 }
+
+
+- (void)logInOrLogOut {
+    if ([[ENSession sharedSession] isAuthenticated]) {
+        [[ENSession sharedSession] unauthenticate];
+        [self update];
+    } else {
+        [[ENSession sharedSession] authenticateWithViewController:self
+                                               preferRegistration:NO
+                                                       completion:^(NSError *authenticateError) {
+                                                           if (!authenticateError) {
+                                                               [self update];
+                                                           } else if (authenticateError.code != ENErrorCodeCancelled) {
+                                                               [CommonUtils showSimpleAlertWithMessage:@"Could not authenticate."];
+                                                           }
+                                                       }];
+    }
+}
+
+- (void)update
+{
+    if ([[ENSession sharedSession] isAuthenticated]) {
+        [self.navigationItem setTitle:[[ENSession sharedSession] userDisplayName]];
+    } else {
+        [self.navigationItem setTitle:nil];
+    }
+    [self updateLoginItem];
+    
+    [self.tableView reloadData];
+}
+
 
 
 @end

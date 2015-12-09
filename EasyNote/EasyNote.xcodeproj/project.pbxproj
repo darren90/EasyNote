@@ -47,6 +47,7 @@
 		FEF15CE11C147F0800642E87 /* SettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15CE01C147F0800642E87 /* SettingCell.m */; };
 		FEF15CE41C147FC400642E87 /* BaseSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15CE31C147FC400642E87 /* BaseSettingViewController.m */; };
 		FEF15DF91C18661500642E87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEF15DF81C18661500642E87 /* Foundation.framework */; };
+		FEF15DFC1C18693300642E87 /* CommonUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15DFB1C18693300642E87 /* CommonUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +147,8 @@
 		FEF15CE21C147FC400642E87 /* BaseSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseSettingViewController.h; sourceTree = "<group>"; };
 		FEF15CE31C147FC400642E87 /* BaseSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseSettingViewController.m; sourceTree = "<group>"; };
 		FEF15DF81C18661500642E87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FEF15DFA1C18693300642E87 /* CommonUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtils.h; sourceTree = "<group>"; };
+		FEF15DFB1C18693300642E87 /* CommonUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -360,6 +363,8 @@
 		FEF15C8F1C13ED7A00642E87 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				FEF15DFA1C18693300642E87 /* CommonUtils.h */,
+				FEF15DFB1C18693300642E87 /* CommonUtils.m */,
 				FEF15C901C13ED7A00642E87 /* Category */,
 				FEF15C951C13ED7A00642E87 /* FMDBTool.h */,
 				FEF15C961C13ED7A00642E87 /* FMDBTool.m */,
@@ -703,6 +708,7 @@
 				FEF15C981C13ED7A00642E87 /* FMDatabaseAdditions.m in Sources */,
 				FEF15CBF1C13F14900642E87 /* NewNoteController.m in Sources */,
 				FEF15CA01C13ED7A00642E87 /* UIAlertView+Blocks.m in Sources */,
+				FEF15DFC1C18693300642E87 /* CommonUtils.m in Sources */,
 				FEF15CDE1C147E8F00642E87 /* SettingGroup.m in Sources */,
 				FEF15CCF1C13F93D00642E87 /* SettingController.m in Sources */,
 				FEF15CA11C13ED7A00642E87 /* NSString+Category.m in Sources */,
