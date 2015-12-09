@@ -175,10 +175,14 @@
                                                        }];
     }
 }
-
+/**
+ *  登陆EverNote成功
+ */
 - (void)update
 {
     if ([[ENSession sharedSession] isAuthenticated]) {
+        NSString *userName = [[ENSession sharedSession] userDisplayName];
+        NSLog(@"---:%@",userName);
         [self.navigationItem setTitle:[[ENSession sharedSession] userDisplayName]];
     } else {
         [self.navigationItem setTitle:nil];
