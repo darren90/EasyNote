@@ -1,0 +1,2 @@
+EVERNOTE_CLOUD_SDK_IOS_HEADER_SEARCH_PATHS = $(SDKROOT)/usr/include/libxml2
+EVERNOTE_CLOUD_SDK_IOS_OTHER_LDFLAGS = -l"xml2" -framework "CoreGraphics" -framework "Foundation" -framework "MobileCoreServices" -framework "UIKit"

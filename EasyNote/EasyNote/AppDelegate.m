@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <Bugly/CrashReporter.h>
 #import "MobClick.h"
+#import <ENSDK.h>
 
 @interface AppDelegate ()
 
@@ -27,9 +28,17 @@
     // Override point for customization after application launch.
     [[CrashReporter sharedInstance] installWithAppId:KBuglyAPPID];
     
+    [self initEverNote];
     [self umengTrack];//友盟的方法本身是异步执行，所以不需要再异步调用
     
     return YES;
+}
+-(void)initEverNote
+{
+    // Set shared session key information.
+    [ENSession setSharedSessionConsumerKey:@"teng"
+                            consumerSecret:@"d6c7294a6d2dfb88"
+                              optionalHost:ENSessionHostSandbox];
 }
 - (void)umengTrack {
     //    [MobClick setCrashReportEnabled:NO]; // 如果不需要捕捉异常，注释掉此行
@@ -72,5 +81,10 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    return [[ENSession sharedSession] handleOpenURL:url];
+}
 
 @end

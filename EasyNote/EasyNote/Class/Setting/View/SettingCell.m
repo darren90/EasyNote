@@ -82,7 +82,7 @@
 
 - (BOOL)isAllowedNotification {
     //iOS8 check if user allow notification
-    if (IsIOS8) {// system is iOS8
+    if (Is_IOS8) {// system is iOS8
         UIUserNotificationSettings *setting = [[UIApplication sharedApplication] currentUserNotificationSettings];
         if (UIUserNotificationTypeNone != setting.types) {
             return YES;

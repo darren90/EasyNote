@@ -21,6 +21,7 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - Bugly (1.4.3)
+  - evernote-cloud-sdk-ios (2.0.5)
   - MJExtension (3.0.7)
   - MJRefresh (3.0.5)
   - SDWebImage (3.7.3):
@@ -31,6 +32,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - Bugly
+  - evernote-cloud-sdk-ios
   - MJExtension
   - MJRefresh
   - SDWebImage (~> 3.7)
@@ -39,6 +41,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   Bugly: b8d350be5047a468adf037cb016ab22762bc287c
+  evernote-cloud-sdk-ios: 048cf5dcdc0c64069192d1336b7e121bc1a77e12
   MJExtension: 290cc966f0f849b12b6391a38e296e0004ae8e5e
   MJRefresh: 809ed03f2014275056c3d65e2812aef1ba5b0f98
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84

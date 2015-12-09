@@ -1,0 +1,6 @@
+#include "evernote-cloud-sdk-ios.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/evernote-cloud-sdk-ios" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/Bugly" "${PODS_ROOT}/Headers/Public/Bugly/Bugly" "${PODS_ROOT}/Headers/Public/MJExtension" "${PODS_ROOT}/Headers/Public/MJRefresh" "${PODS_ROOT}/Headers/Public/SDWebImage" "${PODS_ROOT}/Headers/Public/UMengAnalytics" "${PODS_ROOT}/Headers/Public/evernote-cloud-sdk-ios" ${EVERNOTE_CLOUD_SDK_IOS_HEADER_SEARCH_PATHS}
+OTHER_LDFLAGS = ${EVERNOTE_CLOUD_SDK_IOS_OTHER_LDFLAGS}
+PODS_ROOT = ${SRCROOT}
+SKIP_INSTALL = YES

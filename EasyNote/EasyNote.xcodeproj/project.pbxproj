@@ -46,6 +46,7 @@
 		FEF15CDE1C147E8F00642E87 /* SettingGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15CDD1C147E8F00642E87 /* SettingGroup.m */; };
 		FEF15CE11C147F0800642E87 /* SettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15CE01C147F0800642E87 /* SettingCell.m */; };
 		FEF15CE41C147FC400642E87 /* BaseSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15CE31C147FC400642E87 /* BaseSettingViewController.m */; };
+		FEF15DF91C18661500642E87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEF15DF81C18661500642E87 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +145,7 @@
 		FEF15CE01C147F0800642E87 /* SettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingCell.m; sourceTree = "<group>"; };
 		FEF15CE21C147FC400642E87 /* BaseSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseSettingViewController.h; sourceTree = "<group>"; };
 		FEF15CE31C147FC400642E87 /* BaseSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseSettingViewController.m; sourceTree = "<group>"; };
+		FEF15DF81C18661500642E87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEF15DF91C18661500642E87 /* Foundation.framework in Frameworks */,
 				FEF15CBC1C13EF0B00642E87 /* libsqlite3.tbd in Frameworks */,
 				98CA2AE5F65B68B49F48062F /* libPods.a in Frameworks */,
 			);
@@ -185,6 +188,7 @@
 		C05F22983A8196E3090AC202 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FEF15DF81C18661500642E87 /* Foundation.framework */,
 				FEF15CBB1C13EF0B00642E87 /* libsqlite3.tbd */,
 				F776B13C60E3DAE59427B60D /* libPods.a */,
 			);
