@@ -55,6 +55,7 @@
                 <constraint firstItem="4UF-fj-xSS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="fBs-ak-F1l"/>
             </constraints>
             <connections>
+                <outlet property="cloudView" destination="JJY-PC-p5O" id="ubT-YC-zq3"/>
                 <outlet property="timeLabel" destination="i1b-R7-N6V" id="BLX-Nz-cog"/>
                 <outlet property="titleLabel" destination="4UF-fj-xSS" id="gOo-xH-tiU"/>
             </connections>

@@ -12,6 +12,7 @@
 @interface NoteListCell()
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *cloudView;
 
 @end
 
@@ -44,6 +45,11 @@
     
     self.timeLabel.text = model.addTime;
     self.titleLabel.text = model.title;
+    if (model.isSynched) {
+        self.cloudView.hidden = NO;
+    }else{
+        self.cloudView.hidden = YES;
+    }
 }
 
 @end

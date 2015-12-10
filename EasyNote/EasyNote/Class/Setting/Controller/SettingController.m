@@ -15,6 +15,8 @@
 
 #import "CommonUtils.h"
 #import <ENSDK.h>
+#import "NoteModel.h"
+
 @interface SettingController ()
 @property (nonatomic,strong)NSMutableArray *dataArray ;
 @end
@@ -157,22 +159,31 @@
     }else if (indexPath.section == 1 && indexPath.row == 0){//第一区，登陆EverNote
         [self logInOrLogOut];
     }else if (indexPath.section == 1 && indexPath.row == 1){//第一区，同步笔记
-        [self synchroNote];
+        [self synchroNotes];
     }
 }
 
 
+-(void)synchroNotes
+{
+    NSArray *array = [FMDBTool getNotesWithNoteSynched:NO];
+    
+    for (NoteModel *model in array) {
+        [self synchroNoteWithNoteModel:model];
+    }
+}
 
-- (void)synchroNote {
+- (void)synchroNoteWithNoteModel:(NoteModel *)model {
     ENNote *noteToSave = [[ENNote alloc] init];
-    noteToSave.title = @"天气下雨";
-    NSString *content1 = @"今天完成任务，发布版本";
+    noteToSave.title = model.title;
+    NSString *content1 = model.content;
     ENNoteContent *noteContent = [ENNoteContent noteContentWithString:content1];
     [noteToSave setContent:noteContent];
 //    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
     [[ENSession sharedSession] uploadNote:noteToSave notebook:nil completion:^(ENNoteRef *noteRef, NSError *uploadNoteError) {
         NSString * message = nil;
         if (noteRef) {
+            [FMDBTool updateNoteSynchedWithIdStr:model.idStr];//更新数据库的同步显示
             message = @"Customized note saved.";
         } else {
             message = @"Failed to save customized note.";
