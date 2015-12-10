@@ -71,12 +71,13 @@
 - (void)setupGroup_0
 {
     //begain
-    SettingItem *login = [SettingItem itemWithTitle:@"长按删除笔记"];
- 
+    SettingItem *operate1 = [SettingItem itemWithTitle:@"长按可删除笔记"];
+    SettingItem *operate2 = [SettingItem itemWithTitle:@"右下角有云朵标示的为已同步笔记"];
+
     
     SettingGroup *group = [[SettingGroup alloc] init];
     //    self.dataArray = @[login,synch];
-    group.items = @[login];
+    group.items = @[operate1,operate2];
     group.header = @"操作";
     
     [self.data addObject:group];
@@ -168,9 +169,12 @@
 {
     NSArray *array = [FMDBTool getNotesWithNoteSynched:NO];
     
-    for (NoteModel *model in array) {
+    for (int i = 0 ; i< array.count; i++) {
+        NoteModel *model = array[i];
+        [SVProgressHUD showProgress:i/array.count status:[NSString stringWithFormat:@"同步中:%d/%lu",i ,(unsigned long)array.count] maskType:SVProgressHUDMaskTypeBlack];
         [self synchroNoteWithNoteModel:model];
     }
+    [SVProgressHUD dismiss];
 }
 
 - (void)synchroNoteWithNoteModel:(NoteModel *)model {
@@ -188,8 +192,7 @@
         } else {
             message = @"Failed to save customized note.";
         }
-//        [SVProgressHUD dismiss];
-        [CommonUtils showSimpleAlertWithMessage:message];
+//        [CommonUtils showSimpleAlertWithMessage:message];
     }];
 }
 

@@ -9,7 +9,7 @@ pod 'Bugly'
 pod 'UMengAnalytics'##标准SDK，含IDFA
 pod 'evernote-cloud-sdk-ios' ##evernote
 ##pod 'Evernote-SDK-iOS' ##evernote
-
+pod 'SVProgressHUD'
 
 target 'EasyNote' do
 
