@@ -87,12 +87,14 @@
 {
     //begain
     SettingItem *login = [SettingItem itemWithTitle:@"登陆EverNote"];
-    //    push.subtitle = @"追剧，影评，动态马上知道";
-    
     SettingItem *synch = [SettingLabelItem itemWithTitle:@"同步笔记"];
     
     SettingGroup *group = [[SettingGroup alloc] init];
-    group.items = @[login,synch];
+    if([[ENSession sharedSession] isAuthenticated]){
+        group.items = @[login,synch];
+    }else{
+        group.items = @[login];
+    }
     group.header = @"同步";
     
     [self.data addObject:group];
@@ -154,8 +156,28 @@
         [[UIApplication sharedApplication] openURL:url];
     }else if (indexPath.section == 1 && indexPath.row == 0){//第一区，登陆EverNote
         [self logInOrLogOut];
+    }else if (indexPath.section == 1 && indexPath.row == 1){//第一区，同步笔记
+        [self synchroNotes];
     }
-    
+}
+
+- (void)synchroNotes {
+    ENNote *noteToSave = [[ENNote alloc] init];
+    noteToSave.title = @"天气下雨";
+    NSString *content1 = @"今天完成任务，发布版本";
+    ENNoteContent *noteContent = [ENNoteContent noteContentWithString:content1];
+    [noteToSave setContent:noteContent];
+//    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
+    [[ENSession sharedSession] uploadNote:noteToSave notebook:nil completion:^(ENNoteRef *noteRef, NSError *uploadNoteError) {
+        NSString * message = nil;
+        if (noteRef) {
+            message = @"Customized note saved.";
+        } else {
+            message = @"Failed to save customized note.";
+        }
+//        [SVProgressHUD dismiss];
+        [CommonUtils showSimpleAlertWithMessage:message];
+    }];
 }
 
 
