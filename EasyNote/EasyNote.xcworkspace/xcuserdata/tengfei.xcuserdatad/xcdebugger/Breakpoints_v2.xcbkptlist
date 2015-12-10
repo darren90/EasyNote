@@ -26,23 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EasyNote/Class/Setting/Controller/SettingController.m"
-            timestampString = "471447351.666929"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "208"
-            endingLineNumber = "208"
-            landmarkName = "-update"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EasyNote/Class/Setting/Controller/SettingController.m"
-            timestampString = "471447351.666929"
+            timestampString = "471447875.761925"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "206"
@@ -58,11 +42,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EasyNote/Class/Setting/Controller/SettingController.m"
-            timestampString = "471447351.666929"
+            timestampString = "471447875.761925"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
+            landmarkName = "-update"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EasyNote/Class/Setting/Controller/SettingController.m"
+            timestampString = "471447875.761925"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
             landmarkName = "-synchroNotes"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EasyNote/Class/Setting/Controller/SettingController.m"
-            timestampString = "471447351.666929"
+            timestampString = "471447875.761925"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
             landmarkName = "-synchroNotes"
             landmarkType = "5">
             <Locations>
@@ -90,11 +90,11 @@
                   moduleName = "EasyNote"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tengfei/github/EasyNote/EasyNote/EasyNote/Class/Setting/Controller/SettingController.m"
-                  timestampString = "471447352.756567"
+                  timestampString = "471447897.352967"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "172"
-                  endingLineNumber = "172"
+                  startingLineNumber = "171"
+                  endingLineNumber = "171"
                   offsetFromSymbolStart = "122">
                </Location>
                <Location
@@ -105,11 +105,11 @@
                   moduleName = "EasyNote"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tengfei/github/EasyNote/EasyNote/EasyNote/Class/Setting/Controller/SettingController.m"
-                  timestampString = "471447352.7572"
+                  timestampString = "471447897.353405"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "174"
-                  endingLineNumber = "174"
+                  startingLineNumber = "173"
+                  endingLineNumber = "173"
                   offsetFromSymbolStart = "4">
                </Location>
             </Locations>
