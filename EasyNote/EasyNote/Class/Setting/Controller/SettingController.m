@@ -180,7 +180,6 @@
     }];
 }
 
-
 - (void)logInOrLogOut {
     if ([[ENSession sharedSession] isAuthenticated]) {
         [[ENSession sharedSession] unauthenticate];
