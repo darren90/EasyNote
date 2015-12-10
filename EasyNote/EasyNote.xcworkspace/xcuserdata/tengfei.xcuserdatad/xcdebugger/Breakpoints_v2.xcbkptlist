@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EasyNote/Class/Other/Tools/FMDBTool.m"
-            timestampString = "471094917.645754"
+            timestampString = "471476601.4358"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "+modifyNoteWithNoteModel:idStr:"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,7 +90,7 @@
                   moduleName = "EasyNote"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tengfei/github/EasyNote/EasyNote/EasyNote/Class/Setting/Controller/SettingController.m"
-                  timestampString = "471448550.735731"
+                  timestampString = "471476723.434121"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "171"
@@ -105,7 +105,7 @@
                   moduleName = "EasyNote"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tengfei/github/EasyNote/EasyNote/EasyNote/Class/Setting/Controller/SettingController.m"
-                  timestampString = "471448550.736298"
+                  timestampString = "471476723.434546"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "173"
@@ -113,6 +113,22 @@
                   offsetFromSymbolStart = "4">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EasyNote/Class/Other/Tools/FMDBTool.m"
+            timestampString = "471476510.426019"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "+updateNoteSynchedWithIdStr:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

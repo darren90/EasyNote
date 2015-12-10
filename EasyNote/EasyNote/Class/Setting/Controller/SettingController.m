@@ -157,11 +157,13 @@
     }else if (indexPath.section == 1 && indexPath.row == 0){//第一区，登陆EverNote
         [self logInOrLogOut];
     }else if (indexPath.section == 1 && indexPath.row == 1){//第一区，同步笔记
-        [self synchroNotes];
+        [self synchroNote];
     }
 }
 
-- (void)synchroNotes {
+
+
+- (void)synchroNote {
     ENNote *noteToSave = [[ENNote alloc] init];
     noteToSave.title = @"天气下雨";
     NSString *content1 = @"今天完成任务，发布版本";

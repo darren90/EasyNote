@@ -37,11 +37,41 @@
  *  @return 是否修改成功
  */
 +(BOOL)modifyNoteWithNoteModel:(NoteModel *)model idStr:(NSString *)idStr;
+
+/**
+ *  更改笔记的同步状态（与EverNote同步）
+ *
+ *  @param model NoteModel
+ *  @param idStr 主键
+ *
+ *  @return 是否修改成功
+ */
++(BOOL)updateNoteSynchedWithIdStr:(NSString *)idStr;
+
 /**
  *  取出所有的笔记
  *
  *  @return NoteModel数组
  */
 +(NSArray *)getAllNotes;
+
+/**
+ *  根据是否登陆取出笔记列表
+ *
+ *  @param isSynched 是否已经同步过
+ *
+ *  @return NoteModel数组
+ */
++(NSArray *)getNotesWithNoteSynched:(BOOL)isSynched;
  
 @end
+
+
+
+
+
+
+
+
+
+
