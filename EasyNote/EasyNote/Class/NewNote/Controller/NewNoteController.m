@@ -45,8 +45,9 @@
     textView.font = [UIFont systemFontOfSize:18];
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textHadhage) name:UITextViewTextDidChangeNotification object:nil];
+    
     UIBarButtonItem * actionItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(action:)];
-    [self.navigationItem setRightBarButtonItem:actionItem];
+//    [self.navigationItem setRightBarButtonItem:actionItem];
 }
 
 - (void)action:(id)sender
