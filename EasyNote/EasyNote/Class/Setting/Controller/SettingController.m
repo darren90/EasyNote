@@ -46,11 +46,18 @@
     self.tableView.rowHeight = 160 / 3;
     
     // 2.添加数据
+    [self setupArraydata];
+  }
+
+-(void)setupArraydata
+{
     [self setupGroup_0];
     [self setupGroup0];
     [self setupGroup1];
     [self setupGroup2];
 }
+
+
 -(void)dismissSelf
 {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -89,13 +96,15 @@
 - (void)setupGroup0
 {
     //begain
-    SettingItem *login = [SettingItem itemWithTitle:@"登陆EverNote"];
     SettingItem *synch = [SettingLabelItem itemWithTitle:@"同步笔记"];
     
     SettingGroup *group = [[SettingGroup alloc] init];
     if([[ENSession sharedSession] isAuthenticated]){
+        SettingItem *login = [SettingItem itemWithTitle:@"退出登陆"];
         group.items = @[login,synch];
     }else{
+        SettingItem *login = [SettingItem itemWithTitle:@"登陆EverNote"];
+
         group.items = @[login];
     }
     group.header = @"同步";
@@ -185,14 +194,9 @@
     [noteToSave setContent:noteContent];
 //    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
     [[ENSession sharedSession] uploadNote:noteToSave notebook:nil completion:^(ENNoteRef *noteRef, NSError *uploadNoteError) {
-        NSString * message = nil;
         if (noteRef) {
             [FMDBTool updateNoteSynchedWithIdStr:model.idStr];//更新数据库的同步显示
-            message = @"Customized note saved.";
-        } else {
-            message = @"Failed to save customized note.";
         }
-//        [CommonUtils showSimpleAlertWithMessage:message];
     }];
 }
 
@@ -220,15 +224,15 @@
     if ([[ENSession sharedSession] isAuthenticated]) {
         NSString *userName = [[ENSession sharedSession] userDisplayName];
         NSLog(@"---:%@",userName);
-        [self.navigationItem setTitle:[[ENSession sharedSession] userDisplayName]];
+        
     } else {
-        [self.navigationItem setTitle:nil];
+        
     }
 //    [self updateLoginItem];//更新登陆/登出的状态显示
-    
+    [self.data removeAllObjects];
+     [self setupArraydata];
     [self.tableView reloadData];
 }
-
 
 
 @end
