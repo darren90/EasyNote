@@ -11,4 +11,6 @@
 @interface EasyNoteTools : NSObject
 
 +(void)isNewVersion;
+
++(BOOL)isHadNewVersion;
 @end
