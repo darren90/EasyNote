@@ -9,6 +9,7 @@
 #import "FMDBTool.h"
 #import "FMDB.h"   
 #import "NoteModel.h"
+#import "EasyNoteTools.h"
 
 @implementation FMDBTool
 
@@ -23,9 +24,20 @@ static FMDatabaseQueue *_queue;
     // 2.创表
     [_queue inDatabase:^(FMDatabase *db) {
         //idStr title content location addTime
-        
-        //idStr:主键，唯一不变的量：创建笔记的时间取md5加密后的唯一字符串  isSynched:是否和EverNote同步了
-        [db executeUpdate:@"create table if not exists easytNote (id integer primary key autoincrement,idStr text,title text,content text, addTime text,isSynched BOOL);"];
+        if (![db tableExists:@"easytNote"]) {
+            //idStr:主键，唯一不变的量：创建笔记的时间取md5加密后的唯一字符串  isSynched:是否和EverNote同步了
+            [db executeUpdate:@"create table if not exists easytNote (id integer primary key autoincrement,idStr text,title text,content text, addTime text,isSynched BOOL);"];
+        }else{
+            if ([EasyNoteTools isHadNewVersion]) {
+                //1：建临时表
+//                [db executeUpdate:@"create table if not exists temp_easytNote (id integer primary key autoincrement,idStr text,title text,content text, addTime text);"];
+//                [db executeUpdate:@"INSERT INTO temp_easytNote SELECT * FROM easytNote;"];
+                //2：修改原表
+                [db executeUpdate:@"ALTER TABLE easytNote ADD COLUMN isSynched BOOL;"];
+//                [db executeUpdate:@"delete from easytNote;"];
+//                [db executeUpdate:@"INSERT INTO easytNote SELECT idStr,title,content,addTime, 'NO' FROM temp_easytNote;"];
+            }
+        }
     }];
 }
 
