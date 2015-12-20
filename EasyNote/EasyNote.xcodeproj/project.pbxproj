@@ -48,6 +48,7 @@
 		FEF15CE41C147FC400642E87 /* BaseSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15CE31C147FC400642E87 /* BaseSettingViewController.m */; };
 		FEF15DF91C18661500642E87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEF15DF81C18661500642E87 /* Foundation.framework */; };
 		FEF15DFC1C18693300642E87 /* CommonUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF15DFB1C18693300642E87 /* CommonUtils.m */; };
+		FEFD7E201C26B8D1001B5D30 /* EasyNoteTools.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFD7E1F1C26B8D1001B5D30 /* EasyNoteTools.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +150,8 @@
 		FEF15DF81C18661500642E87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FEF15DFA1C18693300642E87 /* CommonUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtils.h; sourceTree = "<group>"; };
 		FEF15DFB1C18693300642E87 /* CommonUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUtils.m; sourceTree = "<group>"; };
+		FEFD7E1E1C26B8D1001B5D30 /* EasyNoteTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyNoteTools.h; sourceTree = "<group>"; };
+		FEFD7E1F1C26B8D1001B5D30 /* EasyNoteTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyNoteTools.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +282,7 @@
 		FE309E691C07601D00B5FE0D /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FEFD7E1D1C26B8AB001B5D30 /* Tools */,
 				FEF15CC61C13F4B700642E87 /* Base */,
 				FE309E6A1C07601D00B5FE0D /* Controller */,
 				FE309E6B1C07601D00B5FE0D /* Model */,
@@ -514,6 +518,15 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		FEFD7E1D1C26B8AB001B5D30 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				FEFD7E1E1C26B8D1001B5D30 /* EasyNoteTools.h */,
+				FEFD7E1F1C26B8D1001B5D30 /* EasyNoteTools.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -685,6 +698,7 @@
 				FEF15CDB1C147E7800642E87 /* SettingSwitchItem.m in Sources */,
 				FE309E351C06032400B5FE0D /* ViewController.m in Sources */,
 				FEF15CBA1C13EE2D00642E87 /* NoteModel.m in Sources */,
+				FEFD7E201C26B8D1001B5D30 /* EasyNoteTools.m in Sources */,
 				FE309E321C06032400B5FE0D /* AppDelegate.m in Sources */,
 				FEF15C9D1C13ED7A00642E87 /* RIButtonItem.m in Sources */,
 				FEF15CD81C147E5700642E87 /* SettingLabelItem.m in Sources */,
