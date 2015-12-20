@@ -28,8 +28,7 @@ static FMDatabaseQueue *_queue;
             //idStr:主键，唯一不变的量：创建笔记的时间取md5加密后的唯一字符串  isSynched:是否和EverNote同步了
             [db executeUpdate:@"create table if not exists easytNote (id integer primary key autoincrement,idStr text,title text,content text, addTime text,isSynched BOOL);"];
         }else{
-            BOOL resu = YES;//[EasyNoteTools isHadNewVersion]
-            if (resu) {
+            if ([EasyNoteTools isHadNewVersion]) {
                 //1：建临时表
 //                [db executeUpdate:@"create table if not exists temp_easytNote (id integer primary key autoincrement,idStr text,title text,content text, addTime text);"];
 //                [db executeUpdate:@"INSERT INTO temp_easytNote SELECT idStr,title,content,addTime FROM easytNote;"];
