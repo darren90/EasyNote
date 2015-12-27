@@ -109,15 +109,12 @@
 
 /**********************************第三方服务**************************************/
 
-//AppID：900012079
-//AppKey：ifzTIjm8FXUNSgsg
 //1:腾讯bugly
 #define KBuglyAPPID @"900012995"
 #define KBuglyAPPKey @"RgnuABgTbhBwKWZ2"
 
 //2.友盟
 #define KUmegnAppKey    @"56572972e0f55ad9cc005dcf"
-
 
 /**********************************第三方服务**************************************/
 
