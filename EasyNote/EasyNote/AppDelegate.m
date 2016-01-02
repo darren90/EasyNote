@@ -31,6 +31,9 @@
     [self initEverNote];
     [self umengTrack];//友盟的方法本身是异步执行，所以不需要再异步调用
     
+    UIApplicationShortcutItem *item = [launchOptions valueForKey:UIApplicationLaunchOptionsShortcutItemKey];
+    //根据不同的Action响应不同的事件
+    
     return YES;
 }
 -(void)initEverNote
@@ -86,5 +89,17 @@
 {
     return [[ENSession sharedSession] handleOpenURL:url];
 }
+
+-(void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler
+{
+    NSLog(@"---:%@--:%@",shortcutItem,shortcutItem.type);
+    if ([shortcutItem.type isEqualToString:@"addNote"]) {//3DTouch 菜单，添加笔记
+        //根据不同的Action响应不同的事件
+    }
+    if (completionHandler) {
+        completionHandler(YES);
+    }
+}
+//- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void(^)(BOOL succeeded))completionHandler NS_AVAILABLE_IOS(9_0)
 
 @end
