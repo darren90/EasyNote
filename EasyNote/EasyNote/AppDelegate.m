@@ -11,6 +11,9 @@
 #import "MobClick.h"
 #import <ENSDK.h>
 
+#import "NewNoteController.h"
+#import "BaseNavigationController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -31,9 +34,13 @@
     [self initEverNote];
     [self umengTrack];//友盟的方法本身是异步执行，所以不需要再异步调用
     
-    UIApplicationShortcutItem *item = [launchOptions valueForKey:UIApplicationLaunchOptionsShortcutItemKey];
-    //根据不同的Action响应不同的事件
-    
+//    UIApplicationShortcutItem *item = [launchOptions valueForKey:UIApplicationLaunchOptionsShortcutItemKey];
+//    //根据不同的Action响应不同的事件
+//    if ([item.type isEqualToString:@"addNote"]) {//3DTouch 菜单，添加笔记
+//        //根据不同的Action响应不同的事件
+//        NSLog(@"---sdfsdfds");
+//        return NO;
+//    }
     return YES;
 }
 -(void)initEverNote
@@ -92,14 +99,17 @@
 
 -(void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler
 {
-    NSLog(@"---:%@--:%@",shortcutItem,shortcutItem.type);
+//    NSLog(@"---:%@--:%@",shortcutItem,shortcutItem.type);
     if ([shortcutItem.type isEqualToString:@"addNote"]) {//3DTouch 菜单，添加笔记
         //根据不同的Action响应不同的事件
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        NewNoteController *newVc = [sb instantiateViewControllerWithIdentifier:@"newNoteVc"];
+        BaseNavigationController *nav = (BaseNavigationController *)self.window.rootViewController;
+        [nav.topViewController.navigationController pushViewController:newVc animated:YES];
     }
     if (completionHandler) {
         completionHandler(YES);
     }
 }
-//- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void(^)(BOOL succeeded))completionHandler NS_AVAILABLE_IOS(9_0)
 
 @end
