@@ -32,12 +32,18 @@
 	<key>UIApplicationShortcutItems</key>
 	<array>
 		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string></string>
 			<key>UIApplicationShortcutItemIconType</key>
 			<string>UIApplicationShortcutIconTypeAdd</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>新笔记</string>
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>新建笔记</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>addNote</string>
+			<key>UIApplicationShortcutItemUserInfo</key>
+			<dict/>
 		</dict>
 	</array>
 	<key>UILaunchStoryboardName</key>
