@@ -128,13 +128,14 @@
         NSURL *url = [NSURL URLWithString:stringURL];
         [[UIApplication sharedApplication] openURL:url];
     };
-    NSString *currentVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
-    NSString *title = [NSString stringWithFormat:@"当前版本 (V:%@)",currentVersion];
+//    NSString *currentVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
+    NSString *currentVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    NSString *title = [NSString stringWithFormat:@"当前版本 (%@)",currentVersion];
     SettingItem *version = [SettingItem itemWithTitle:title];
 
     
     SettingGroup *group = [[SettingGroup alloc] init];
-    group.items = @[mark,suggest];
+    group.items = @[mark,suggest,version];
     group.header = @"APP";
 
     [self.data addObject:group];
