@@ -135,7 +135,7 @@
 
     
     SettingGroup *group = [[SettingGroup alloc] init];
-    group.items = @[mark,suggest,version];
+    group.items = @[mark,suggest];
     group.header = @"APP";
 
     [self.data addObject:group];
