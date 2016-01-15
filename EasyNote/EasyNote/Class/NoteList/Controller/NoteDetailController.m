@@ -38,9 +38,10 @@
     // Do any additional setup after loading the view.
     PlaceholderTextView *textView = [[PlaceholderTextView alloc]init];
     self.textView = textView;
-    textView.frame = self.view.bounds;
+//    textView.frame = self.view.bounds;
     textView.placeholder = @"输入文字，添加新笔记";
     [self.view addSubview:textView];
+    [textView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
     textView.font = [UIFont systemFontOfSize:18];
     textView.text = self.model.content;
     

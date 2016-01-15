@@ -39,9 +39,10 @@
     // Do any additional setup after loading the view.
     PlaceholderTextView *textView = [[PlaceholderTextView alloc]init];
     self.textView = textView;
-    textView.frame = self.view.bounds;
-    textView.placeholder = @"输入文字，添加新笔记";
+//    textView.frame = self.view.bounds;
     [self.view addSubview:textView];
+    [textView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
+    textView.placeholder = @"输入文字，添加新笔记";
     textView.font = [UIFont systemFontOfSize:18];
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textHadhage) name:UITextViewTextDidChangeNotification object:nil];

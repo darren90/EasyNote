@@ -99,7 +99,11 @@ static NSString *const IDENTTFIER = @"notelist";
 {
     NSLog(@"size:%@",NSStringFromCGSize(size));
     // 根据屏幕宽度决定列数
-    int cols = (size.width == 1024) ? 3 : 2;
+//    int cols = (size.width == 1024) ? 3 : 2;
+    int cols = 2;
+    if (size.width == 480 || size.width == 568 || size.width == 667 || size.width == 736) {
+        cols = 3;
+    }
     
     // 根据列数计算内边距
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.waterView.collectionViewLayout;
