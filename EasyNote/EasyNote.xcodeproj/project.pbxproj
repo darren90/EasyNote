@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		98CA2AE5F65B68B49F48062F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F776B13C60E3DAE59427B60D /* libPods.a */; };
+		FE0621BA1C49194300AA13A0 /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0621B91C49194300AA13A0 /* UIView+AutoLayout.m */; };
 		FE309E2F1C06032400B5FE0D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE309E2E1C06032400B5FE0D /* main.m */; };
 		FE309E321C06032400B5FE0D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE309E311C06032400B5FE0D /* AppDelegate.m */; };
 		FE309E351C06032400B5FE0D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE309E341C06032400B5FE0D /* ViewController.m */; };
@@ -72,6 +73,8 @@
 		41D461D2DDD8EEEC0E649383 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		51B62A3E5160BFFED6B39946 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F776B13C60E3DAE59427B60D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE0621B81C49194300AA13A0 /* UIView+AutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayout.h"; sourceTree = "<group>"; };
+		FE0621B91C49194300AA13A0 /* UIView+AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayout.m"; sourceTree = "<group>"; };
 		FE309E2A1C06032400B5FE0D /* EasyNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE309E2E1C06032400B5FE0D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FE309E301C06032400B5FE0D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = EasyNote/AppDelegate.h; sourceTree = "<group>"; };
@@ -201,6 +204,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FE0621B71C49194300AA13A0 /* UIView+AutoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				FE0621B81C49194300AA13A0 /* UIView+AutoLayout.h */,
+				FE0621B91C49194300AA13A0 /* UIView+AutoLayout.m */,
+			);
+			path = "UIView+AutoLayout";
+			sourceTree = "<group>";
+		};
 		FE309E211C06032400B5FE0D = {
 			isa = PBXGroup;
 			children = (
@@ -324,6 +336,7 @@
 		FEF15C781C13ED7A00642E87 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				FE0621B71C49194300AA13A0 /* UIView+AutoLayout */,
 				FEF15C791C13ED7A00642E87 /* fmdb */,
 				FEF15C851C13ED7A00642E87 /* HUD */,
 			);
@@ -714,6 +727,7 @@
 				FEF15CA31C13ED7A00642E87 /* FMDBTool.m in Sources */,
 				FEF15CA21C13ED7A00642E87 /* UIImage+Category.m in Sources */,
 				FEF15CC91C13F4CC00642E87 /* BaseNavigationController.m in Sources */,
+				FE0621BA1C49194300AA13A0 /* UIView+AutoLayout.m in Sources */,
 				FE309E2F1C06032400B5FE0D /* main.m in Sources */,
 				FEF15C991C13ED7A00642E87 /* FMDatabasePool.m in Sources */,
 				FEF15C9F1C13ED7A00642E87 /* SVProgressHUD.m in Sources */,

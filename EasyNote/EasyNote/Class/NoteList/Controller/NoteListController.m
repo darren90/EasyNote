@@ -75,6 +75,7 @@ static NSString *const IDENTTFIER = @"notelist";
     UICollectionView * waterView = [[UICollectionView alloc]initWithFrame:rect collectionViewLayout:flowLayout];
     [waterView registerNib:[UINib nibWithNibName:@"NoteListCell" bundle:nil] forCellWithReuseIdentifier:IDENTTFIER];
     [self.view addSubview:waterView];
+    [waterView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
     
     waterView.backgroundColor = [UIColor whiteColor];
     waterView.delegate = self;
@@ -92,6 +93,21 @@ static NSString *const IDENTTFIER = @"notelist";
     flowLayout.minimumInteritemSpacing = 7;
     //flowLayout.headerReferenceSize = CGSizeMake(10, 10);
     flowLayout.sectionInset = UIEdgeInsetsMake(section,section,section,section);
+}
+
+-(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
+{
+    NSLog(@"size:%@",NSStringFromCGSize(size));
+    // 根据屏幕宽度决定列数
+    int cols = (size.width == 1024) ? 3 : 2;
+    
+    // 根据列数计算内边距
+    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.waterView.collectionViewLayout;
+    CGFloat inset = (size.width - cols * layout.itemSize.width) / (cols + 1);
+    layout.sectionInset = UIEdgeInsetsMake(inset, inset, inset, inset);
+    
+    // 设置每一行之间的间距
+    layout.minimumLineSpacing = inset;
 }
 
 -(void)jumpToSeeting
@@ -121,6 +137,13 @@ static NSString *const IDENTTFIER = @"notelist";
 - (void)rightBtnClick
 {
     [self performSegueWithIdentifier:@"movieSearch" sender:self];
+}
+
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    // 计算一遍内边距
+    [self viewWillTransitionToSize:CGSizeMake(self.waterView.frame.size.width, 0) withTransitionCoordinator:nil];
+    return 1;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
