@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EasyNote/Class/Setting/Controller/SettingController.m"
-            timestampString = "475248310.986816"
+            timestampString = "475248936.582895"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "238"
-            endingLineNumber = "238"
+            startingLineNumber = "246"
+            endingLineNumber = "246"
             landmarkName = "-update"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EasyNote/Class/Setting/Controller/SettingController.m"
-            timestampString = "475248310.986816"
+            timestampString = "475248936.582895"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "236"
-            endingLineNumber = "236"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
             landmarkName = "-update"
             landmarkType = "5">
          </BreakpointContent>

@@ -130,8 +130,15 @@
     };
 //    NSString *currentVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
     NSString *currentVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-    NSMutableAttributedString 
-    NSString *title = [NSString stringWithFormat:@"当前版本 (%@)",currentVersion];
+    NSString *titlePre = @"当前版本";
+    NSString *title = [NSString stringWithFormat:@"%@ (%@)",titlePre,currentVersion];
+    
+    NSMutableAttributedString *markAttrStr = [[NSMutableAttributedString alloc]initWithString:title];
+    [markAttrStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:16] range:NSMakeRange(0, titlePre.length)];
+    [markAttrStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(titlePre.length, title.length - titlePre.length)];
+    [markAttrStr addAttribute:NSForegroundColorAttributeName value:[UIColor lightGrayColor] range:NSMakeRange(titlePre.length, title.length - titlePre.length)];
+    [markAttrStr addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(titlePre.length+2, title.length - titlePre.length - 3)];//有个空格，所以+1
+#warning TODO - 待做，属性字符串
     SettingItem *version = [SettingItem itemWithTitle:title];
 
     
