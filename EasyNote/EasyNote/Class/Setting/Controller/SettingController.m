@@ -52,7 +52,7 @@
 -(void)setupArraydata
 {
     [self setupGroup_0];
-    [self setupGroup0];
+//    [self setupGroup0];//印象笔记相关
     [self setupGroup1];
     [self setupGroup2];
 }
@@ -130,12 +130,13 @@
     };
 //    NSString *currentVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
     NSString *currentVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    NSMutableAttributedString 
     NSString *title = [NSString stringWithFormat:@"当前版本 (%@)",currentVersion];
     SettingItem *version = [SettingItem itemWithTitle:title];
 
     
     SettingGroup *group = [[SettingGroup alloc] init];
-    group.items = @[mark,suggest];
+    group.items = @[mark,suggest,version];
     group.header = @"APP";
 
     [self.data addObject:group];
@@ -159,18 +160,29 @@
 // http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=1065348807&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 2 && indexPath.row == 0) {//第二区，App Store评价
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    if (indexPath.section == 2 && indexPath.row == 0) {//第二区，App Store评价
+//        NSString *str = [NSString stringWithFormat:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=%@&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8",KAppid];
+//        
+//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+//    }else if (indexPath.section == 2 && indexPath.row == 1){//第二区，App Store建议
+//        NSString *stringURL = @"mailto:fengtenfei90@163.com";
+//        NSURL *url = [NSURL URLWithString:stringURL];
+//        [[UIApplication sharedApplication] openURL:url];
+//    }else if (indexPath.section == 1 && indexPath.row == 0){//第一区，登陆EverNote
+//        [self logInOrLogOut];
+//    }else if (indexPath.section == 1 && indexPath.row == 1){//第一区，同步笔记
+//        [self synchroNotes];
+//    }
+    
+    if (indexPath.section == 1 && indexPath.row == 0) {//第二区，App Store评价
         NSString *str = [NSString stringWithFormat:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=%@&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8",KAppid];
         
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
-    }else if (indexPath.section == 2 && indexPath.row == 1){//第二区，App Store建议
+    }else if (indexPath.section == 1 && indexPath.row == 1){//第二区，App Store建议
         NSString *stringURL = @"mailto:fengtenfei90@163.com";
         NSURL *url = [NSURL URLWithString:stringURL];
         [[UIApplication sharedApplication] openURL:url];
-    }else if (indexPath.section == 1 && indexPath.row == 0){//第一区，登陆EverNote
-        [self logInOrLogOut];
-    }else if (indexPath.section == 1 && indexPath.row == 1){//第一区，同步笔记
-        [self synchroNotes];
     }
 }
 
