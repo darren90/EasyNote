@@ -43,13 +43,21 @@
 //    }
     return YES;
 }
--(void)initEverNote
-{
+
+-(void)initEverNote {
     // Set shared session key information.
-    [ENSession setSharedSessionConsumerKey:@"teng"
-                            consumerSecret:@"d6c7294a6d2dfb88"
+//    [ENSession setSharedSessionConsumerKey:@"teng"
+//                            consumerSecret:@"d6c7294a6d2dfb88"
+//                              optionalHost:ENSessionHostSandbox];
+  
+
+#pragma makr 以前申请的key忘记了，这下用新的
+    [ENSession setSharedSessionConsumerKey:@"slientnight-9342"
+                            consumerSecret:@"b434a80c9e7097e0"
                               optionalHost:ENSessionHostSandbox];
+    
 }
+
 - (void)umengTrack {
     //    [MobClick setCrashReportEnabled:NO]; // 如果不需要捕捉异常，注释掉此行
     [MobClick setLogEnabled:NO];  // 打开友盟sdk调试，注意Release发布时需要注释掉此行,减少io消耗

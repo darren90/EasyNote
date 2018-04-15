@@ -23,16 +23,16 @@
 
 @implementation SettingController
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [MobClick beginLogPageView:@"page_设置"];
 }
-- (void)viewWillDisappear:(BOOL)animated
-{
+
+- (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [MobClick endLogPageView:@"page_设置"];
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -52,7 +52,7 @@
 -(void)setupArraydata
 {
     [self setupGroup_0];
-//    [self setupGroup0];//印象笔记相关
+    [self setupGroup0];//印象笔记相关
     [self setupGroup1];
     [self setupGroup2];
 }
@@ -93,8 +93,7 @@
 /**
  *  第10组数据
  */
-- (void)setupGroup0
-{
+- (void)setupGroup0 {
     //begain
     SettingItem *synch = [SettingLabelItem itemWithTitle:@"同步笔记"];
     
@@ -111,11 +110,11 @@
     
     [self.data addObject:group];
 }
+
 /**
  *  第1组数据
  */
-- (void)setupGroup1
-{
+- (void)setupGroup1 {
     SettingItem *mark = [SettingArrowItem itemWithTitle:@"去App Store评分"];
     mark.option =  ^{
         NSString *str = [NSString stringWithFormat:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=%@&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8",KAppid];
@@ -153,8 +152,7 @@
 /**
  *  第2组数据
  */
-- (void)setupGroup2
-{
+- (void)setupGroup2 {
     SettingItem *weibo = [SettingItem itemWithTitle:@"微博ID：STRING冯"];
     SettingItem *about = [SettingItem itemWithTitle:@"程序员，iOS开发者，热爱编程，热爱生活！"];
     
@@ -168,34 +166,33 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//    if (indexPath.section == 2 && indexPath.row == 0) {//第二区，App Store评价
-//        NSString *str = [NSString stringWithFormat:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=%@&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8",KAppid];
-//        
-//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
-//    }else if (indexPath.section == 2 && indexPath.row == 1){//第二区，App Store建议
-//        NSString *stringURL = @"mailto:fengtenfei90@163.com";
-//        NSURL *url = [NSURL URLWithString:stringURL];
-//        [[UIApplication sharedApplication] openURL:url];
-//    }else if (indexPath.section == 1 && indexPath.row == 0){//第一区，登陆EverNote
-//        [self logInOrLogOut];
-//    }else if (indexPath.section == 1 && indexPath.row == 1){//第一区，同步笔记
-//        [self synchroNotes];
-//    }
-    
-    if (indexPath.section == 1 && indexPath.row == 0) {//第二区，App Store评价
+    if (indexPath.section == 2 && indexPath.row == 0) {//第二区，App Store评价
         NSString *str = [NSString stringWithFormat:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=%@&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8",KAppid];
         
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
-    }else if (indexPath.section == 1 && indexPath.row == 1){//第二区，App Store建议
+    }else if (indexPath.section == 2 && indexPath.row == 1){//第二区，App Store建议
         NSString *stringURL = @"mailto:fengtenfei90@163.com";
         NSURL *url = [NSURL URLWithString:stringURL];
         [[UIApplication sharedApplication] openURL:url];
+    }else if (indexPath.section == 1 && indexPath.row == 0){//第一区，登陆EverNote
+        [self logInOrLogOut];
+    }else if (indexPath.section == 1 && indexPath.row == 1){//第一区，同步笔记
+        [self synchroNotes];
     }
+    
+//    if (indexPath.section == 1 && indexPath.row == 0) {//第二区，App Store评价
+//        NSString *str = [NSString stringWithFormat:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=%@&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8",KAppid];
+//        
+//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+//    }else if (indexPath.section == 1 && indexPath.row == 1){//第二区，App Store建议
+//        NSString *stringURL = @"mailto:fengtenfei90@163.com";
+//        NSURL *url = [NSURL URLWithString:stringURL];
+//        [[UIApplication sharedApplication] openURL:url];
+//    }
 }
 
 
--(void)synchroNotes
-{
+-(void)synchroNotes {
     NSArray *array = [FMDBTool getNotesWithNoteSynched:NO];
     
     for (int i = 0 ; i< array.count; i++) {
